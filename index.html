@@ -167,10 +167,10 @@ h2::after{content:"";display:block;width:56px;height:4px;border-radius:2px;backg
 #nav{height:66px;align-items:flex-end;padding:0 8px;border-radius:22px 22px 0 0;justify-content:space-around;box-shadow:0 -8px 30px #000a}
 #nav button{position:relative;flex:1;max-width:116px;height:58px;font-size:11px;font-weight:800;letter-spacing:.3px;padding-top:6px}
 #nav button b{font-size:21px;margin-bottom:1px}
-#nav button:nth-child(3){flex:0 0 72px;max-width:72px;height:72px;margin:0 8px;transform:translateY(-16px);border-radius:50%;background:linear-gradient(#ffa24a,#ff5a1a);color:#fff;box-shadow:0 8px 20px #ff7a1a88,0 0 0 5px #0b1124;padding:0;text-shadow:none}
-#nav button:nth-child(3) b{font-size:26px}
-#nav button:nth-child(3).on{box-shadow:0 8px 26px #ffb34799,0 0 0 5px #0b1124,0 0 0 7px #ffc933}
-#nav button:nth-child(3).on b{transform:scale(1.1);filter:none}
+#nav button.fab{flex:0 0 72px;max-width:72px;height:72px;margin:0 8px;transform:translateY(-16px);border-radius:50%;background:linear-gradient(#ffa24a,#ff5a1a);color:#fff;box-shadow:0 8px 20px #ff7a1a88,0 0 0 5px #0b1124;padding:0;text-shadow:none}
+#nav button.fab b{font-size:26px}
+#nav button.fab.on{box-shadow:0 8px 26px #ffb34799,0 0 0 5px #0b1124,0 0 0 7px #ffc933}
+#nav button.fab.on b{transform:scale(1.1);filter:none}
 .dot{position:absolute;top:4px;right:24%;width:11px;height:11px;border-radius:50%;background:#ff3b4e;box-shadow:0 0 10px #ff3b4e;display:none}
 .pill{cursor:pointer}
 .hero{position:relative;overflow:hidden;border-radius:24px;padding:20px;margin-bottom:14px;background:radial-gradient(520px 240px at 95% 0,#ff7a1a44,transparent),radial-gradient(400px 200px at 0 100%,#3b9cff33,transparent),linear-gradient(135deg,#1c2a6e,#0e1640);border:1px solid #3a4890;box-shadow:0 16px 44px #000a}
@@ -487,11 +487,27 @@ tr.star td{text-shadow:0 0 10px #ffc93366}
 .nprof-sc{display:flex;gap:6px;margin:0 12px;flex-wrap:wrap}.nprof .row{margin-left:12px;margin-right:12px}
 .nchat{height:min(52vh,420px);overflow-y:auto;display:flex;flex-direction:column;gap:6px;padding:12px 2px;margin:10px 0;border-top:1px solid #222c58;border-bottom:1px solid #222c58}
 .nmsg{max-width:78%;align-self:flex-start;background:#1b2552;border-radius:14px 14px 14px 4px;padding:8px 11px;word-break:break-word}.nmsg.me{align-self:flex-end;background:linear-gradient(135deg,#ff8a2e,#ff4d6d);color:#fff;border-radius:14px 14px 4px 14px}.nmsg i{display:block;font-style:normal;font-size:10px;opacity:.7;margin-top:2px}
+
+.pwf{position:relative;display:flex}.pwf .inp{width:100%;padding-right:46px}.pweye{position:absolute;right:4px;top:50%;transform:translateY(-50%);width:38px;height:34px;border:0;border-radius:9px;background:transparent;color:var(--mu);cursor:pointer;display:flex;align-items:center;justify-content:center;touch-action:none;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}.pweye:hover,.pweye.on{color:#7df9ff;background:#ffffff12}.pweye:focus-visible{outline:2px solid #7df9ff}
+.gate-msg{background:#ffd35a1a;border:1px solid #ffd35a55;color:#ffe08a;border-radius:10px;padding:9px 11px;margin-bottom:10px;font-size:13px;line-height:1.4}
+.me-chip{display:flex;align-items:center;gap:8px;cursor:pointer;padding:3px 12px 3px 3px;border-radius:999px;background:#ffffff0d;border:1px solid #ffffff22;max-width:46vw;min-width:0}.me-chip:hover{background:#ffffff18}.me-chip span{display:flex;flex-direction:column;min-width:0;line-height:1.15}.me-chip b{font-size:13.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.me-chip i{font-style:normal;font-size:10.5px;color:var(--mu);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+@media(max-width:760px){#top.has-me .logo{display:none}#top.has-me .cur .pill[data-v=goals]{display:none}}
+#nav button{position:relative}.nbadge{position:absolute;top:3px;left:calc(50% + 6px);min-width:16px;height:16px;padding:0 4px;border-radius:8px;background:#ff3b4e;color:#fff;font:800 10px/16px system-ui;font-style:normal;display:none;box-shadow:0 0 8px #ff3b4e}
+#nav button[data-v=me] b{display:flex;justify-content:center;height:26px;align-items:center}#nav button[data-v=me] .nav-av{box-shadow:none}#nav button[data-v=me].on .nav-av{box-shadow:0 0 0 2px var(--ac)}
+@media(max-width:480px){#nav button:not(.fab){font-size:10px;letter-spacing:-.2px}#nav button.fab{flex:0 0 64px;max-width:64px;height:64px;margin:0 4px}}
+.ohub{position:relative;margin:0 0 14px;padding:14px;border-radius:18px;background:radial-gradient(500px 160px at 0 0,color-mix(in srgb,var(--pc) 22%,transparent),transparent),linear-gradient(160deg,#18225d,#0d1436);border:1px solid color-mix(in srgb,var(--pc) 45%,#26305c);box-shadow:0 10px 30px #0007}
+.ohub-top{display:flex;gap:12px;align-items:center;cursor:pointer}.ohub-n{font-size:21px;font-weight:900;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.ohub-ti{color:var(--pc);font-weight:800;font-size:13px}.ohub-go{color:var(--mu);font-size:12.5px;white-space:nowrap}
+.ohub-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:12px}.ohub-t{position:relative;display:flex;flex-direction:column;align-items:center;gap:2px;padding:10px 4px;border-radius:14px;border:1px solid #ffffff1c;background:#0a1030aa;color:var(--tx);font:inherit;cursor:pointer;min-width:0}.ohub-t:hover{border-color:var(--pc)}.ohub-t b{font-size:22px}.ohub-t span{font-weight:800;font-size:13px}.ohub-t i{font-style:normal;font-size:10.5px;color:var(--mu);text-align:center;line-height:1.2}.ohub-t em{position:absolute;top:-6px;right:-4px;min-width:18px;height:18px;border-radius:9px;background:#ff3b4e;color:#fff;font:800 11px/18px system-ui;font-style:normal;padding:0 5px}
+@media(max-width:520px){.ohub-grid{grid-template-columns:repeat(2,1fr)}}
+.ohub-on{display:flex;gap:10px;overflow-x:auto;margin-top:12px;padding-bottom:2px}.ohub-on span{display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer;flex:none}.ohub-on i{font-style:normal;font-size:10.5px;color:var(--mu);max-width:56px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ohub-lb{margin-top:12px;display:flex;flex-direction:column;gap:5px}.ohub-lb>div{display:flex;align-items:center;gap:8px;padding:6px 8px;border-radius:10px;background:#0a103088;cursor:pointer}.ohub-lb span{flex:1;min-width:0;font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.ohub-lb i{font-style:normal;font-size:12px;color:var(--mu)}
+.em-cta{border-color:#ffd35a88;box-shadow:0 0 0 1px #ffd35a33,0 0 24px #ffd35a22}
+.nprof.page{margin:0}.nprof.page .nprof-band{border-radius:0;height:76px}.nprof-ln{margin:6px 12px}.nprof-btns{margin:14px 12px 14px;gap:8px;flex-wrap:wrap}
 </style></head><body>
 
 <header id="top"></header><main id="main"></main>
 <nav id="nav">
-<button data-a="tab" data-v="home"><b>🏠</b>Home</button><button data-a="tab" data-v="roster"><b>👕</b>Roster</button><button data-a="tab" data-v="play"><b>🏀</b>Play</button><button data-a="tab" data-v="store"><b>🛍️</b>Shop</button><button data-a="tab" data-v="menu"><b>☰</b>Menu<i class="dot" id="navdot"></i></button></nav>
+<button data-a="tab" data-v="home"><b>🏠</b>Home</button><button data-a="tab" data-v="roster"><b>👕</b>Roster</button><button data-a="tab" data-v="store"><b>🛍️</b>Shop</button><button class="fab" data-a="tab" data-v="play"><b>🏀</b>Play</button><button data-a="tab" data-v="online"><b>👥</b>Social<i class="nbadge" id="socbadge"></i></button><button data-a="meopen" data-v="me"><b>👤</b>Me</button><button data-a="tab" data-v="menu"><b>☰</b>Menu<i class="dot" id="navdot"></i></button></nav>
 <div id="intro" data-a="intronext"></div>
 <div id="ov"></div><div id="toast"></div>
 <script>
@@ -1906,8 +1922,8 @@ function adminPanel(){if(!admAllowed())return'';const a=S.adm||{},ib='background
  ${SEC[tab]}
  <div class="row" style="margin-top:14px;justify-content:space-between;align-items:center"><span class="odds">Difficulty ${S.diffB} · Title streak ${S.streak||0}</span><button class="btn s" data-a="admlock">🔒 Lock admin</button></div></div>`}
 function homeView(){const t=teamInfo(),s=S.season,l=gmLvl(),xl=100*(l-1)**2,xn=100*l*l,pct=Math.max(0,Math.min(100,Math.round((S.xp-xl)/(xn-xl)*100))),notes=notifList(),T=RK[S.rk.tier],claim=goalsPending().n;
- return`${notes.map(x=>`<div class="note" data-a="tab" data-v="${x[1]}" style="cursor:pointer">${x[0]}</div>`).join('')}${S.nw.pc?'<div class="note" data-a="tab" data-v="news" style="cursor:pointer">🎤 A reporter has a question for you — tap to answer</div>':''}${tickerHTML()}${evBannerHTML()}
- <div class="hero"><div class="row" style="gap:22px;align-items:center"><div class="big">${t.ovr}<small>TEAM OVR</small></div><div style="flex:1;min-width:210px"><h2>Welcome back, GM</h2>
+ return`${typeof netHubHTML=='function'?netHubHTML():''}${notes.map(x=>`<div class="note" data-a="tab" data-v="${x[1]}" style="cursor:pointer">${x[0]}</div>`).join('')}${S.nw.pc?'<div class="note" data-a="tab" data-v="news" style="cursor:pointer">🎤 A reporter has a question for you — tap to answer</div>':''}${tickerHTML()}${evBannerHTML()}
+ <div class="hero"><div class="row" style="gap:22px;align-items:center"><div class="big">${t.ovr}<small>TEAM OVR</small></div><div style="flex:1;min-width:210px"><h2>${typeof netOn=='function'&&netOn()?'Your team':'Welcome back, GM'}</h2>
  <div class="odds">Season ${s.n}: ${s.w}-${s.l} · ${statusText()}</div><div class="odds">🏆 Title streak ${S.streak||0} · ${T.e} ${T.n} · ${S.rk.fame} fame</div>
  <div style="margin-top:8px">GM Level <b>${l}</b> <span class="odds">${S.xp-xl}/${xn-xl} XP</span></div><div class="xp"><i style="width:${pct}%"></i></div></div></div>
  <div class="row" style="margin-top:14px"><button class="btn" data-a="tab" data-v="play">▶ Play</button><button class="btn s" data-a="auto">⚡ Auto lineup</button></div></div>
@@ -1921,7 +1937,7 @@ function menuItems(){const R=S.dc?dcRuleObj():null,claim=goalsPending().n,rk=RK[
  return[
  {id:'play',t:'Compete',e:'⚔️',c:'#ff8a3d',items:[
   {v:'daily',ic:'📅',t:'Daily Challenge',sub:R?R.e+' '+R.n+' · 🔥 '+S.dcs.streak+'-day streak':'A new lineup rule every day',c1:'#ffb347',c2:'#b3470f',bd:dcNew()?'NEW':''},
-  {v:'online',ic:'🌐',t:'Online',sub:netOn()?'Friends · 1v1 · Trading · '+NET.au.name:'Friends · real-player Ranked · 1v1 · Trading',c1:'#4cc9ff',c2:'#0b3a66',bd:netPending()?String(netPending()):''},
+  {v:'online',ic:'👥',t:'Social',sub:'Friends · Leaderboard · Chat · Trades',c1:'#4cc9ff',c2:'#0b3a66',bd:netPending()?String(netPending()):''},
   {v:'ranked',ic:rk.e,t:'Ranked',sub:rk.n,c1:'#ff3b4e',c2:'#6a0f22'},
   {v:'weekly',ic:'🏆',t:'Weekly Event',sub:'Bracket run · '+(WK_TRIES-(S.wk?S.wk.tries:0))+' tries left',c1:'#ffc933',c2:'#8a5a0a'},
   {v:'bracket',ic:'🆚',t:'Playoff Bracket',sub:S.season.po&&!S.season.done?RND_N[Math.min(2,S.season.po.round)]+' · series '+S.season.po.sw+'-'+S.season.po.sl:'Best-of-7 postseason',c1:'#ff5a7a',c2:'#6a1030'},
@@ -3093,8 +3109,8 @@ const netNameOk=n=>/^[a-z0-9_]{3,14}$/.test(n),netIdOk=s=>typeof s=='string'&&/^
 const netOn=()=>!!(NET.cfg&&NET.au&&NET.au.uid);
 function mp(){const m=S.mp&&typeof S.mp=='object'?S.mp:(S.mp={});const ob=k=>{if(!m[k]||typeof m[k]!='object'||Array.isArray(m[k]))m[k]={}};['fr','h2h','esc','proc','def'].forEach(ob);if(!Array.isArray(m.feed))m.feed=[];if(!Array.isArray(m.hist))m.hist=[];m.unseen=m.unseen|0;return m}
 function netLoadLocal(){let o={};try{o=JSON.parse(localStorage.getItem(NETKEY)||'{}')||{}}catch(e){}
- NET.cfg=NETCFG.apiKey&&NETCFG.dbUrl?netCfgClean(NETCFG):(o.cfg?netCfgClean(o.cfg):null);NET.last=netNameOk(o.last||'')?o.last:'';NET.gm=NET.last?'in':'up';NET.au=o.au&&o.au.rt&&netIdOk(o.au.uid)&&netNameOk(o.au.name||'')?{uid:o.au.uid,rt:o.au.rt,name:o.au.name,id:'',exp:0}:null}
-function netSaveLocal(){try{localStorage.setItem(NETKEY,JSON.stringify({cfg:NETCFG.apiKey?null:NET.cfg,au:NET.au?{uid:NET.au.uid,rt:NET.au.rt,name:NET.au.name}:null,last:NET.au?NET.au.name:(NET.last||'')}))}catch(e){}}
+ NET.cfg=NETCFG.apiKey&&NETCFG.dbUrl?netCfgClean(NETCFG):(o.cfg?netCfgClean(o.cfg):null);NET.last=netNameOk(o.last||'')?o.last:'';NET.lastId=typeof o.lastId=='string'?o.lastId.slice(0,120):'';NET.gm=NET.last||NET.lastId?'in':'up';NET.au=o.au&&o.au.rt&&netIdOk(o.au.uid)&&netNameOk(o.au.name||'')?{uid:o.au.uid,rt:o.au.rt,name:o.au.name,id:'',exp:0}:null}
+function netSaveLocal(){try{localStorage.setItem(NETKEY,JSON.stringify({cfg:NETCFG.apiKey?null:NET.cfg,au:NET.au?{uid:NET.au.uid,rt:NET.au.rt,name:NET.au.name}:null,last:NET.au?NET.au.name:(NET.last||''),lastId:String(NET.lastId||'').slice(0,120)}))}catch(e){}}
 function netCfgClean(c){if(!c)return null;const k=String(c.apiKey||'').trim(),u=String(c.dbUrl||'').trim().replace(/\/+$/,'');if(!/^[A-Za-z0-9_-]{20,80}$/.test(k)||!/^https:\/\/[a-z0-9.-]+\.(firebaseio\.com|firebasedatabase\.app)$/i.test(u))return null;return{apiKey:k,dbUrl:u}}
 const netSetupCode=()=>NET.cfg?'HDNET-'+btoa(JSON.stringify({k:NET.cfg.apiKey,u:NET.cfg.dbUrl})):'';
 function netSetupParse(t){try{const s=String(t||'').replace(/\s+/g,'');if(s.slice(0,6)!='HDNET-')return null;const o=JSON.parse(atob(s.slice(6)));return netCfgClean({apiKey:o.k,dbUrl:o.u})}catch(e){return null}}
@@ -3103,7 +3119,10 @@ async function netHttp(url,opt){let r;try{r=await fetch(url,opt)}catch(e){NET.ok
  if(!r.ok){const m=j&&j.error?(typeof j.error=='string'?j.error:String(j.error.message||'')):'';throw{code:r.status,message:m||('HTTP '+r.status)}}return j}
 function netErrText(e){const m=String((e&&e.message)||''),c=e&&e.code;
  if(c=='network')return'No connection — check your internet and try again.';
- if(/EMAIL_EXISTS/.test(m))return'That username is taken. Pick another, or sign in instead.';
+ if(/EMAIL_EXISTS/.test(m))return'An account already uses that email. Sign in instead, or use Forgot password.';
+ if(/INVALID_EMAIL|MISSING_EMAIL|INVALID_NEW_EMAIL/.test(m))return'That email address doesn\'t look right.';
+ if(/CREDENTIAL_TOO_OLD_LOGIN_AGAIN|TOKEN_EXPIRED/.test(m))return'For security, sign out and sign back in, then try again.';
+ if(/RESET_PASSWORD_EXCEED_LIMIT|QUOTA_EXCEEDED/.test(m))return'Too many emails sent. Wait a while and try again.';
  if(/INVALID_LOGIN_CREDENTIALS|EMAIL_NOT_FOUND|INVALID_PASSWORD/.test(m))return'Wrong username or password.';
  if(/WEAK_PASSWORD/.test(m))return'Password must be at least 6 characters.';
  if(/TOO_MANY_ATTEMPTS/.test(m))return'Too many tries. Wait a few minutes and try again.';
@@ -3117,19 +3136,62 @@ function netSignOutLocal(){if(NET.au){NET.last=NET.au.name;NET.gm='in'}NET.au=nu
 async function netToken(){const a=NET.au;if(!a||!NET.cfg)throw{code:'auth',message:'Not signed in'};if(a.id&&a.exp>Date.now()+60000)return a.id;
  if(!NET.refP)NET.refP=(async()=>{try{const j=await netHttp('https://securetoken.googleapis.com/v1/token?key='+encodeURIComponent(NET.cfg.apiKey),{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:'grant_type=refresh_token&refresh_token='+encodeURIComponent(a.rt)});
    a.id=j.id_token;a.rt=j.refresh_token||a.rt;a.exp=Date.now()+(+j.expires_in||3600)*1000;netSaveLocal();return a.id}
-  catch(e){if(/TOKEN_EXPIRED|INVALID_REFRESH_TOKEN|USER_NOT_FOUND|USER_DISABLED/.test(String(e.message||''))){netSignOutLocal();NET.msg='You were signed out. Please sign in again.'}throw e}finally{NET.refP=null}})();
+  catch(e){if(/TOKEN_EXPIRED|INVALID_REFRESH_TOKEN|USER_NOT_FOUND|USER_DISABLED/.test(String(e.message||''))){const pe=S&&S.mp&&S.mp.pendEmail;netSignOutLocal();if(pe){NET.lastId=pe;NET.gm='in';NET.msg='Your email is confirmed. Sign in with '+pe+' to collect your '+NET_EMAIL_BONUS.toLocaleString()+' coins.'}else NET.msg='You were signed out. Please sign in again.';netSaveLocal();if(typeof render=='function')setTimeout(render,0)}throw e}finally{NET.refP=null}})();
  return NET.refP}
 async function netDb(method,path,body){const tk=await netToken(),opt={method};if(body!==undefined)opt.body=JSON.stringify(body);return netHttp(NET.cfg.dbUrl+'/'+path+'.json?auth='+encodeURIComponent(tk),opt)}
 function netFail(e,quiet){NET.err=netErrText(e);if(!quiet)toast(NET.err)}
 /* ---- accounts ---- */
-async function netAuth(mode,name,pw){name=String(name||'').trim().toLowerCase();pw=String(pw||'');
- if(!netNameOk(name))throw{code:'x',message:'x',text:'Usernames are 3–14 characters: letters, numbers or _ only.'};if(pw.length<6)throw{code:'x',message:'WEAK_PASSWORD'};
- const j=await netHttp('https://identitytoolkit.googleapis.com/v1/accounts:'+(mode=='up'?'signUp':'signInWithPassword')+'?key='+encodeURIComponent(NET.cfg.apiKey),{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:name+NET_DOM,password:pw,returnSecureToken:true})});
- if(!netIdOk(j.localId))throw{code:'x',message:'bad response'};
- NET.au={uid:j.localId,id:j.idToken,rt:j.refreshToken,exp:Date.now()+(+j.expiresIn||3600)*1000,name};netSaveLocal();
- try{if(mode=='up'||!(await netDb('GET','names/'+name)))await netDb('PUT','names/'+name,j.localId)}catch(e){}       // claims the name → uid lookup, so friends can find you
- NET.err='';NET.msg='';try{await netAdopt()}catch(e){netSignOutLocal();throw e}admSync();await netAfterLogin(true)}
-async function netAfterLogin(skipAdopt){let ch=false;if(!skipAdopt){try{ch=await netAdopt()}catch(e){}}await Promise.all([netPublish(true),netPoll(true),netPool(true),netCloudInfo()].map(p=>p.catch(()=>{})));return ch}
+/* ---- accounts: email sign-up, username-or-email sign-in, password reset, email verification ---- */
+const netIdt=u=>'https://identitytoolkit.googleapis.com/v1/accounts:'+u+'?key='+encodeURIComponent(NET.cfg.apiKey);
+const netPost=(u,b)=>netHttp(netIdt(u),{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(b)});
+const netEmailOk=e=>/^[^\s@]{1,64}@[^\s@]{1,190}\.[a-z]{2,24}$/i.test(String(e||''))&&!String(e).toLowerCase().endsWith(NET_DOM);
+async function netFindName(uid){try{const n=await netDb('GET','users/'+uid+'/n');if(typeof n=='string'&&netNameOk(n)&&(await netDb('GET','names/'+n))===uid)return n}catch(e){}
+ try{const all=await netDb('GET','names')||{};const k=Object.keys(all).find(k=>all[k]===uid&&netNameOk(k));if(k)return k}catch(e){}return''}
+async function netAuth(mode,ident,pw,email){pw=String(pw||'');if(pw.length<6)throw{code:'x',message:'WEAK_PASSWORD'};const exp=j=>Date.now()+(+j.expiresIn||3600)*1000;let j;
+ if(mode=='up'){const uname=String(ident||'').trim().toLowerCase();email=String(email||'').trim().toLowerCase();
+  if(!netEmailOk(email))throw{text:'Enter a real email address. It is the only way to reset your password.'};
+  if(!netNameOk(uname))throw{text:'Usernames are 3–14 characters: letters, numbers or _ only.'};
+  j=await netPost('signUp',{email,password:pw,returnSecureToken:true});if(!netIdOk(j.localId))throw{code:'x',message:'bad response'};
+  NET.au={uid:j.localId,id:j.idToken,rt:j.refreshToken,exp:exp(j),name:uname};
+  const undo=async()=>{await netPost('delete',{idToken:j.idToken}).catch(()=>{});NET.au=null};
+  let owner=null;try{owner=await netDb('GET','names/'+uname)}catch(e){await undo();throw e}
+  if(owner&&owner!==j.localId){await undo();throw{text:'That username is taken. Pick another.'}}
+  try{await netDb('PUT','names/'+uname,j.localId)}catch(e){await undo();throw e}
+  netPost('sendOobCode',{requestType:'VERIFY_EMAIL',idToken:j.idToken}).catch(()=>{});NET.lastId=email}
+ else{const id=String(ident||'').trim().toLowerCase(),isEm=id.includes('@');
+  if(!isEm&&!netNameOk(id))throw{text:'Enter your email (or the username of an account made before emails were added).'};
+  try{j=await netPost('signInWithPassword',{email:isEm?id:id+NET_DOM,password:pw,returnSecureToken:true})}
+  catch(e){if(/INVALID_LOGIN_CREDENTIALS|EMAIL_NOT_FOUND|INVALID_PASSWORD|INVALID_EMAIL/.test(String(e.message||'')))throw{text:isEm?'Wrong email or password.':'Wrong username or password. If you added an email to your account, sign in with that email instead.'};throw e}
+  if(!netIdOk(j.localId))throw{code:'x',message:'bad response'};
+  NET.au={uid:j.localId,id:j.idToken,rt:j.refreshToken,exp:exp(j),name:isEm?'':id};
+  if(isEm){const n=await netFindName(j.localId);if(!n){NET.au=null;throw{text:'This account never finished setting up its username. Create a new account instead.'}}NET.au.name=n}
+  else{try{if(!(await netDb('GET','names/'+id)))await netDb('PUT','names/'+id,j.localId)}catch(e){}}
+  NET.lastId=id}
+ netSaveLocal();NET.err='';NET.msg='';try{await netAdopt()}catch(e){netSignOutLocal();throw e}admSync();await netAfterLogin(true)}
+async function netForgot(email){email=String(email||'').trim().toLowerCase();if(!netEmailOk(email))throw{text:'Enter the email address on your account.'};
+ try{await netPost('sendOobCode',{requestType:'PASSWORD_RESET',email})}catch(e){if(!/EMAIL_NOT_FOUND/.test(String(e.message||'')))throw e}
+ return'📧 If an account uses '+email+', a reset link is on its way. Check your spam folder too.'}
+async function netLookup(){const tk=await netToken(),j=await netPost('lookup',{idToken:tk}),u=(j.users||[])[0]||{},e=String(u.email||'').toLowerCase();return{email:e,ver:!!u.emailVerified,real:!!e&&!e.endsWith(NET_DOM)}}
+const NET_EMAIL_BONUS=5000;
+async function netEmailCheck(manual){if(!netOn())return false;let r;try{r=await netLookup()}catch(e){if(manual)throw e;return false}NET.em=r;const m=mp();
+ if(r.real&&m.pendEmail&&r.email===m.pendEmail)delete m.pendEmail;
+ if(r.real&&r.ver&&!m.emBonus){m.emBonus=1;S.coins+=NET_EMAIL_BONUS;netFeed('🎁 Email verified — +'+NET_EMAIL_BONUS.toLocaleString()+' coins');save();renderTop();toast('🎁 Email verified — +'+NET_EMAIL_BONUS.toLocaleString()+' coins!');if(tab=='me'||tab=='home')render();return true}
+ if(manual&&r.real&&!r.ver)throw{text:'Not verified yet. Open the link in the email we sent to '+r.email+', then try again.'};
+ if(manual&&!r.real)throw{text:m.pendEmail?'Not done yet. Open the link we sent to '+m.pendEmail+'. After that you may need to sign in again with that email.':'Add an email first.'};
+ return false}
+async function netAddEmail(email){email=String(email||'').trim().toLowerCase();if(!netEmailOk(email))throw{text:'That email address doesn\'t look right.'};
+ const tk=await netToken();await netPost('sendOobCode',{requestType:'VERIFY_AND_CHANGE_EMAIL',idToken:tk,newEmail:email});mp().pendEmail=email;save();
+ return'📧 Link sent to '+email+'. Open it to confirm — then sign in with that email to collect your '+NET_EMAIL_BONUS.toLocaleString()+' coins.'}
+async function netResendVerify(){const tk=await netToken();await netPost('sendOobCode',{requestType:'VERIFY_EMAIL',idToken:tk});return'📧 Verification email sent. Check your spam folder too.'}
+/* password field with a hold-to-show eye */
+const pwField=(id,ac,ph,extra)=>`<div class="pwf"><input class="inp" id="${id}" type="password" autocomplete="${ac}" placeholder="${ph}"${extra||''}><button type="button" class="pweye" data-pw="${id}" aria-label="Hold to show password" title="Hold to show password"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M1.5 12S5.5 4.5 12 4.5 22.5 12 22.5 12 18.5 19.5 12 19.5 1.5 12 1.5 12z"/><circle cx="12" cy="12" r="3.2"/></svg></button></div>`;
+(function(){const show=(b,on)=>{const i=document.getElementById(b.dataset.pw);if(i){i.type=on?'text':'password';b.classList.toggle('on',on)}};let held=null;
+ document.addEventListener('pointerdown',e=>{const b=e.target.closest&&e.target.closest('.pweye');if(!b)return;e.preventDefault();held=b;show(b,true)});
+ const up=()=>{if(held){show(held,false);held=null}};if(typeof addEventListener=='function')['pointerup','pointercancel','blur'].forEach(t=>addEventListener(t,up));document.addEventListener('pointerout',e=>{if(held&&e.target.closest&&e.target.closest('.pweye')===held&&!held.contains(e.relatedTarget))up()});
+ document.addEventListener('keydown',e=>{const b=e.target.closest&&e.target.closest('.pweye');if(b&&(e.key==' '||e.key=='Enter')){e.preventDefault();held=b;show(b,true)}});
+ document.addEventListener('keyup',e=>{if(held&&(e.key==' '||e.key=='Enter'))up()});
+ document.addEventListener('contextmenu',e=>{if(e.target.closest&&e.target.closest('.pweye'))e.preventDefault()})})();
+async function netAfterLogin(skipAdopt){let ch=false;if(!skipAdopt){try{ch=await netAdopt()}catch(e){}}await Promise.all([netPublish(true),netPoll(true),netPool(true),netCloudInfo(),netEmailCheck()].map(p=>p.catch(()=>{})));return ch}
 /* ---- public profile ---- */
 function netFlag(){if(S.adm&&S.adm.on)S.adm.used=1;return!!((S.adm&&(S.adm.on||S.adm.used))||PLAYERS.some(p=>p.custom&&S.owned[p.id]!=null))}
 const netCardsStr=()=>Object.keys(S.owned).map(Number).filter(id=>PLAYERS[id]&&!PLAYERS[id].custom).sort((a,b)=>a-b).join(',');
@@ -3283,16 +3345,10 @@ function netTradesTab(){if(NET.trd)return netTradeBuild();const me=NET.au.uid,al
  ${Object.keys(m.esc).filter(id=>!NET.box.tr[id]).length?`<div class="odds" style="margin-top:8px">Some offered cards are still being held. They return automatically once the offer is answered.</div>`:''}</div>`}
 function netFeedTab(){const m=mp();prof();const G2=m.games;return`<div class="panel"><h3>Recent online games</h3>${G2.map(g=>`<div class="step"><span>${g.w?'<b style="color:#7dff9a">W</b>':'<b style="color:#ff6b6b">L</b>'} ${g.a}-${g.b} · ${g.k=='f'?'⚔️ 1v1':'🏅 Ranked'} vs ${g.u?`<b data-a="netprof" data-v="${g.u}" style="cursor:pointer">${nesc(g.n)}</b> 🌐`:nesc(g.n)+' 🤖'}</span><span class="odds">${netAgo(g.t)}</span></div>`).join('')||'<div class="odds">No online games yet. Play Ranked or challenge a friend.</div>'}</div>
  <div class="panel"><h3>Activity</h3>${m.feed.map(f=>`<div class="step"><span>${String(f.x).replace(/&/g,'&amp;').replace(/</g,'&lt;')}</span><span class="odds">${netAgo(f.t)}</span></div>`).join('')||'<div class="odds">Nothing yet. Results of games against your team, 1v1 challenges and trades show up here.</div>'}</div>`}
-function netAccountTab(){const c=NET.cloud;return`<div class="panel"><h3>Account</h3><div class="odds">Signed in as <b>${NET.au.name}</b>${netFlag()?' · 🔧 admin save (cannot trade)':''}</div>
- <div class="row" style="margin-top:10px"><button class="btn s" data-a="netout">Sign out</button></div></div>
- <div class="panel"><h3>🔑 Change password</h3><div class="row"><input class="inp" id="netNewPw" type="password" autocomplete="new-password" placeholder="New password (6+ characters)" style="${NIB}"><button class="btn s" data-a="netpw">Change</button></div></div>
- <div class="panel"><h3>☁️ Cloud save</h3><div class="odds" style="margin-bottom:10px">Your game is backed up to your account every few minutes while you play, so you can continue on another device. ${c&&c.t?'Last backup: '+netAgo(c.t)+'.':'No backup yet.'}</div>
- <div class="row"><button class="btn" data-a="netbk"${NET.busy?' disabled':''}>☁️ Back up now</button><button class="btn s" data-a="netrs"${NET.busy?' disabled':''}>⬇️ Load cloud save</button></div></div>
- ${NETCFG.apiKey?'':`<div class="panel"><h3>Invite friends</h3><div class="odds" style="margin-bottom:8px">Send your friends the game file and this setup code. They paste it once on their Online screen.</div><div class="row"><input class="inp" id="netShare" readonly value="${netSetupCode()}" style="${NIB}"><button class="btn s" data-a="netcopycode">📋 Copy</button></div></div>`}`}
-function onlineView(){const head=pageHead('Online',netOn()?'Signed in as '+NET.au.name:'Friends · Ranked · 1v1 · Trading');
+function onlineView(){const head=pageHead('Social','Friends · Leaderboard · Chat · Trades');
  if(!NET.cfg||!NET.au)return head+gateView();if(!S.drafted)return head+'<div class="panel odds">Draft your team first, then come back here.</div>';
  const me=NET.au.uid,nReq=Object.keys(NET.box.req).length,nTr=Object.values(NET.box.tr).filter(t=>t.to==me&&t.st=='open').length,m=mp();
- const TABS=[['profile','👤 Profile',0],['friends','👥 Friends',nReq],['rank','🏅 Ranked',0],['chat','💬 Chat',netUnreadChats()],['trades','🔁 Trades',nTr],['feed','📣 Activity',m.unseen],['acct','⚙️ Account',0]],cur=TABS.some(t=>t[0]==NET.tab)?NET.tab:'profile';
+ const TABS=[['friends','👥 Friends',nReq],['rank','🏆 Leaderboard',0],['chat','💬 Chat',netUnreadChats()],['trades','🔁 Trades',nTr],['feed','📣 Activity',m.unseen]],cur=TABS.some(t=>t[0]==NET.tab)?NET.tab:'friends';
  if(cur=='feed'&&m.unseen){m.unseen=0;save()}
  return`${head}${NET.err?`<div class="panel odds" style="border-color:#ff6b6b;color:#ffb3b3">${String(NET.err).replace(/&/g,'&amp;').replace(/</g,'&lt;')}</div>`:''}
  <div class="chips" style="margin-bottom:12px">${TABS.map(t=>`<button class="chip ${t[0]==cur?'on':''}" data-a="nettab" data-v="${t[0]}">${t[1]}${t[2]?` <b style="color:#ffd54a">(${t[2]})</b>`:''}</button>`).join('')}</div>
@@ -3346,21 +3402,37 @@ async function netAdopt(){const uid=NET.au.uid,m=mp();let cloud;
  try{localStorage.removeItem(KEY)}catch(e){}S=fresh();mp().owner=uid;D=null;G=null;MU=null;tab='home';save();NET.msg2='🎉 Welcome to Hoop Dynasty, '+NET.au.name+'!';return true}
 /* ---- the gate: no account, no game ---- */
 const netGate=()=>!!(NET.cfg&&!NET.au)||!NET.cfg;
-function gateView(){const sv=GMSVG2;
+function gateView(){const sv=GMSVG2,gm=NET.gm=='up'||NET.gm=='forgot'?NET.gm:'in';
  if(!NET.cfg)return`<div class="gate">${netSetupView()}</div>`;
- return`<div class="gate"><div class="gate-hero"><div class="gate-m">${sv}</div><div><div class="gate-t">HOOP<br><span>DYNASTY</span></div><div class="gate-s">Draft real NBA legends. Build a dynasty. Beat your friends.</div></div></div>
- <div class="panel gate-box"><h3>${NET.gm=='up'?'Create your account':'Sign in to play'}</h3>
- ${NET.msg?`<div class="odds" style="color:#ffd54a;margin-bottom:8px">${nesc(NET.msg)}</div>`:''}
- <label class="odds" for="netName">Username</label><input class="inp" id="netName" maxlength="14" autocomplete="username" autocapitalize="off" spellcheck="false" placeholder="3–14 letters, numbers or _" value="${NET.gm=='in'?nesc(NET.last||''):''}" style="width:100%;margin:4px 0 10px">
- <label class="odds" for="netPw">Password</label><input class="inp" id="netPw" type="password" autocomplete="${NET.gm=='up'?'new-password':'current-password'}" placeholder="6+ characters" style="width:100%;margin:4px 0 14px">
- <button class="btn" style="width:100%" data-a="netauth" data-v="${NET.gm=='up'?'up':'in'}"${NET.busy?' disabled':''}>${NET.busy?'One moment…':NET.gm=='up'?'Create account & play':'Sign in'}</button>
- <div class="odds" style="text-align:center;margin-top:12px">${NET.gm=='up'?'Already have an account? <a href="#" data-a="netgm" data-v="in">Sign in</a>':'New here? <a href="#" data-a="netgm" data-v="up">Create a free account</a>'}</div>
- <div class="odds" style="margin-top:12px;font-size:11.5px">No email needed. Usernames can't be recovered and passwords can't be reset, so write yours down. Don't reuse a password from another site.</div></div></div>`}
+ const msg=NET.msg?`<div class="gate-msg">${nesc(NET.msg)}</div>`:'';
+ const form=gm=='forgot'?`<h3>Reset your password</h3>${msg}<div class="odds" style="margin-bottom:10px">Enter the email on your account and we'll send you a link to choose a new password.</div>
+  <label class="odds" for="netFgEmail">Email</label><input class="inp" id="netFgEmail" type="email" autocomplete="email" autocapitalize="off" spellcheck="false" placeholder="you@example.com" value="${nesc(NET.lastId&&NET.lastId.includes('@')?NET.lastId:'')}" style="width:100%;margin:4px 0 14px">
+  <button class="btn" style="width:100%" data-a="netforgot"${NET.busy?' disabled':''}>${NET.busy?'One moment…':'Send reset link'}</button>
+  <div class="odds" style="text-align:center;margin-top:12px"><a href="#" data-a="netgm" data-v="in">← Back to sign in</a></div>
+  <div class="odds" style="margin-top:12px;font-size:11.5px">Older accounts made with only a username can't be reset. Sign in and add an email from your profile to protect yours.</div>`
+ :gm=='up'?`<h3>Create your account</h3>${msg}
+  <label class="odds" for="netEmail">Email</label><input class="inp" id="netEmail" type="email" autocomplete="email" autocapitalize="off" spellcheck="false" placeholder="you@example.com" style="width:100%;margin:4px 0 10px">
+  <label class="odds" for="netName">Username <span style="opacity:.7">· what other players see</span></label><input class="inp" id="netName" maxlength="14" autocomplete="username" autocapitalize="off" spellcheck="false" placeholder="3–14 letters, numbers or _" style="width:100%;margin:4px 0 10px">
+  <label class="odds" for="netPw">Password</label>${pwField('netPw','new-password','6+ characters',' style="margin:4px 0 14px"')}
+  <button class="btn" style="width:100%" data-a="netauth" data-v="up"${NET.busy?' disabled':''}>${NET.busy?'One moment…':'Create account & play'}</button>
+  <div class="odds" style="text-align:center;margin-top:12px">Already have an account? <a href="#" data-a="netgm" data-v="in">Sign in</a></div>
+  <div class="odds" style="margin-top:12px;font-size:11.5px">Your email is private: other players only see your username. We use it to verify your account and reset your password. 🎁 Verify it for ${NET_EMAIL_BONUS.toLocaleString()} free coins.</div>`
+ :`<h3>Sign in to play</h3>${msg}
+  <label class="odds" for="netName">Email or username</label><input class="inp" id="netName" maxlength="120" autocomplete="username" autocapitalize="off" spellcheck="false" placeholder="you@example.com" value="${nesc(NET.lastId||NET.last||'')}" style="width:100%;margin:4px 0 10px">
+  <div style="display:flex;justify-content:space-between;align-items:baseline"><label class="odds" for="netPw">Password</label><a href="#" class="odds" data-a="netgm" data-v="forgot" style="font-size:12px">Forgot password?</a></div>${pwField('netPw','current-password','Your password',' style="margin:4px 0 14px"')}
+  <button class="btn" style="width:100%" data-a="netauth" data-v="in"${NET.busy?' disabled':''}>${NET.busy?'One moment…':'Sign in'}</button>
+  <div class="odds" style="text-align:center;margin-top:12px">New here? <a href="#" data-a="netgm" data-v="up">Create a free account</a></div>`;
+ return`<div class="gate"><div class="gate-hero"><div class="gate-m">${sv}</div><div><div class="gate-t">HOOP<br><span>DYNASTY</span></div><div class="gate-s">The online basketball card game. Draft NBA legends, trade with friends, climb the Ranked ladder.</div></div></div>
+ <div class="panel gate-box">${form}</div></div>`}
 const _render0=render;
-render=function(){if(netGate()){renderTop();$('#nav').style.display='none';const m=$('#main');m.innerHTML=gateView();return}_render0()};
+render=function(){if(netGate()){const keep={};['netEmail','netName','netPw','netFgEmail'].forEach(id=>{const e=document.getElementById(id);if(e&&e.value)keep[id]=e.value});renderTop();$('#nav').style.display='none';const m=$('#main');m.innerHTML=gateView();Object.keys(keep).forEach(id=>{const e=document.getElementById(id);if(e&&!(id=='netName'&&NET.keepName===false))e.value=keep[id]});return}_render0()};
 const _renderTop0=renderTop;
 renderTop=function(){if(netGate()){$('#top').innerHTML=`<div class="logo"><span class="lgi">🏀</span> <i>HOOP DYNASTY</i></div>`;return}_renderTop0();
- if(netOn()){const t=$('#top .cur');if(t&&!t.querySelector('.nav-me')){const p=netMyPub(),b=document.createElement('span');b.className='nav-me';b.dataset.a='tab';b.dataset.v='online';b.title='Your profile';b.innerHTML=netAvatar(p,30)+(netPending()?'<i class="nav-badge">'+Math.min(99,netPending())+'</i>':'');t.appendChild(b)}}};
+ const top=$('#top'),has=netOn()&&S.drafted;top.classList.toggle('has-me',has);
+ if(has){const lg=$('#top .logo');if(lg&&!top.querySelector('.me-chip')){const T=RK[S.rk.tier],c=document.createElement('div');c.className='me-chip';c.dataset.a='meopen';c.dataset.v='me';c.title='Your profile';c.innerHTML=netAvatar(netMyPub(),34)+`<span><b>${nesc(NET.au.name)}</b><i>${T.e} ${T.n} · ${S.rk.fame}</i></span>`;lg.after(c)}}
+ netNavSync()};
+function netNavSync(){const me=$('#nav [data-v=me] b');if(me){if(netOn()){const p=prof(),k=NET.au.uid+'|'+p.a+'|'+p.col+'|'+p.img.length;if(me.dataset.k!==k){me.dataset.k=k;me.innerHTML=netAvatar(netMyPub(),26)}}else if(me.dataset.k){me.dataset.k='';me.textContent='👤'}}
+ const sb=$('#socbadge');if(sb){const n=netPending();sb.textContent=n>99?'99+':String(n);sb.style.display=n?'block':'none'}}
 /* ---- Ranked is online-only: it needs a live connection (bots still fill in when no real player is near your rank) ---- */
 const _startGame0=startGame;
 startGame=function(kind,spec){if(kind=='rk'){if(!netOn()){toast('🏅 Sign in to play Ranked');return}
@@ -3378,16 +3450,53 @@ async function netSendChat(uid,txt){txt=ntext(txt,200);if(!txt)return'';const m=
  prof();const L=m.chat[uid]=m.chat[uid]||[];L.push({me:1,x:txt,t:Date.now()});m.chat[uid]=L.slice(-60);save();return''}
 const netUnreadChats=()=>{const m=mp();return Object.keys(m.chu||{}).reduce((s,k)=>s+(m.chu[k]|0),0)};
 /* ---- profile viewer (anyone) ---- */
-async function netOpenProfile(uid){if(!netIdOk(uid))return;let u=netUser(uid);if(uid===NET.au.uid)u=netParseUser(uid,{...netMyPub(),n:NET.au.name,c:shCode()||'',o:teamInfo().ovr,f:S.rk.fame,tr:S.rk.tier,w:S.rk.w,l:S.rk.l,t:Date.now(),v:NET_VER});
- if(!u){modal('<div class="odds">Loading profile…</div>');try{const j=await netDb('GET','users/'+uid);if(!j){modal('<h3>Player not found</h3><div class="row" style="margin-top:12px"><button class="btn s" data-a="close">Close</button></div>');return}u=netParseUser(uid,j)}catch(e){modal('<h3>Could not load that profile</h3><div class="odds">'+nesc(netErrText(e))+'</div><div class="row" style="margin-top:12px"><button class="btn s" data-a="close">Close</button></div>');return}}
- const m=mp(),me=uid===NET.au.uid,f=m.fr[uid],fr=f&&f.ok,T=RK[u.tr],h=m.h2h[uid],col=NCOL[u.col],blk=!!(m.blk||{})[uid];
- modal(`<div class="nprof" style="--pc:${col}"><div class="nprof-band"></div><div class="nprof-head">${netAvatar(u,84)}<div style="min-width:0"><div class="nprof-n">${nesc(u.n)}${netDot(u.t)}</div><div class="nprof-ti">${nesc(ntTitle(u.ti))}</div><div class="odds">${netSeen(u.t)?'Online now':'Last seen '+netAgo(u.t)}</div></div></div>
-  ${u.b?`<div class="nprof-bio">${nesc(u.b)}</div>`:''}
+/* ---- profile card shared by the profile page and the profile pop-up ---- */
+function netProfileHTML(u,ctx){const m=mp(),me=u.uid===(NET.au&&NET.au.uid),f=m.fr[u.uid],fr=f&&f.ok,T=RK[u.tr],h=m.h2h[u.uid],blk=!!(m.blk||{})[u.uid];
+ const btns=ctx=='page'?`<button class="btn" data-a="metab" data-v="edit">✏️ Edit profile</button><button class="btn s" data-a="metab" data-v="acct">⚙️ Account</button>`
+  :`${me?`<button class="btn" data-a="netedit">✏️ Edit profile</button>`:fr?`<button class="btn" data-a="netcl1v1" data-v="${u.uid}">⚔️ 1v1</button><button class="btn s" data-a="netclchat" data-v="${u.uid}">💬 Message</button><button class="btn s" data-a="netcltrade" data-v="${u.uid}">🔁 Trade</button>`:f?`<span class="odds">Friend request sent</span>`:`<button class="btn" data-a="netpfadd" data-v="${nesc(u.n)}">➕ Add friend</button>`}
+  ${me?'':`<button class="btn s" data-a="netblock" data-v="${u.uid}">${blk?'Unblock':'🚫 Block'}</button>`}<button class="btn s" data-a="close">Close</button>`;
+ return`<div class="nprof${ctx=='page'?' page':''}" style="--pc:${NCOL[u.col]}"><div class="nprof-band"></div><div class="nprof-head">${netAvatar(u,ctx=='page'?96:84)}<div style="min-width:0"><div class="nprof-n">${nesc(u.n)}${netDot(u.t)}</div><div class="nprof-ti">${nesc(ntTitle(u.ti))}</div><div class="odds">${me&&ctx=='page'?`${T.e} ${T.n} · ${u.f} fame`:netSeen(u.t)?'Online now':'Last seen '+netAgo(u.t)}</div></div></div>
+  ${u.b?`<div class="nprof-bio">${nesc(u.b)}</div>`:me&&ctx=='page'?`<div class="nprof-bio odds">No bio yet. Tap Edit profile to add one.</div>`:''}
   <div class="nprof-stats"><div><b>${T.e} ${T.n}</b><i>${u.f} fame</i></div><div><b>${u.w}-${u.l}</b><i>Ranked record</i></div><div><b>${u.o}</b><i>Team OVR</i></div><div><b>${u.lv}</b><i>GM level</i></div><div><b>${u.cc}</b><i>Cards</i></div><div><b>${u.ch}</b><i>Titles</i></div></div>
-  ${u.tm>=0?`<div class="odds" style="margin:8px 0">❤️ Favorite team: <b>${NBA_TEAMS[u.tm]}</b></div>`:''}${h?`<div class="odds" style="margin:4px 0">⚔️ Your 1v1 record vs ${nesc(u.n)}: <b>${h.w}-${h.l}</b></div>`:''}
-  ${u.sc.length?`<div class="odds" style="margin:10px 0 6px">Showcase</div><div class="nprof-sc">${u.sc.map(id=>`<div class="ivc" style="--s:.62;zoom:.62">${card(Pb(id))}</div>`).join('')}</div>`:''}
-  <div class="row" style="margin-top:14px;gap:8px;flex-wrap:wrap">${me?`<button class="btn" data-a="netedit">✏️ Edit profile</button>`:fr?`<button class="btn" data-a="netcl1v1" data-v="${uid}">⚔️ 1v1</button><button class="btn s" data-a="netclchat" data-v="${uid}">💬 Message</button><button class="btn s" data-a="netcltrade" data-v="${uid}">🔁 Trade</button>`:f?`<span class="odds">Friend request sent</span>`:`<button class="btn" data-a="netpfadd" data-v="${nesc(u.n)}">➕ Add friend</button>`}
-  ${me?'':`<button class="btn s" data-a="netblock" data-v="${uid}">${blk?'Unblock':'🚫 Block'}</button>`}<button class="btn s" data-a="close">Close</button></div></div>`)}
+  ${u.tm>=0?`<div class="odds nprof-ln">❤️ Favorite team: <b>${NBA_TEAMS[u.tm]}</b></div>`:''}${h&&!me?`<div class="odds nprof-ln">⚔️ Your 1v1 record vs ${nesc(u.n)}: <b>${h.w}-${h.l}</b></div>`:''}
+  ${u.sc.length?`<div class="odds nprof-ln" style="margin-top:10px">Showcase</div><div class="nprof-sc">${u.sc.map(id=>`<div class="ivc" style="--s:.62;zoom:.62">${card(Pb(id))}</div>`).join('')}</div>`:me&&ctx=='page'?`<div class="odds nprof-ln">No showcase cards yet. Pick 3 in Edit profile.</div>`:''}
+  <div class="row nprof-btns">${btns}</div></div>`}
+const netMeUser=()=>netParseUser(NET.au.uid,{...netMyPub(),n:NET.au.name,c:shCode()||'',o:teamInfo().ovr,f:S.rk.fame,tr:S.rk.tier,w:S.rk.w,l:S.rk.l,t:Date.now(),v:NET_VER});
+async function netOpenProfile(uid){if(!netIdOk(uid))return;if(uid===NET.au.uid){NET.meTab='view';ACT.tab('me');return}let u=netUser(uid);
+ const fail=t=>modal('<h3>'+t+'</h3><div class="row" style="margin-top:12px"><button class="btn s" data-a="close">Close</button></div>');
+ if(!u){modal('<div class="odds">Loading profile…</div>');try{const j=await netDb('GET','users/'+uid);if(!j)return fail('Player not found');u=netParseUser(uid,j)}catch(e){return fail('Could not load that profile. '+nesc(netErrText(e)))}}
+ modal(netProfileHTML(u,'pop'))}
+/* ---- email / account panel ---- */
+function netEmailPanel(){const r=NET.em,m=mp(),b=NET_EMAIL_BONUS.toLocaleString();
+ if(!r)return`<div class="panel"><h3>📧 Email</h3><div class="odds">Checking your account…</div></div>`;
+ if(r.real&&r.ver)return`<div class="panel"><h3>📧 Email</h3><div class="odds">✅ <b>${nesc(r.email)}</b> is verified. You can reset your password with it if you ever forget it.${m.emBonus?' Bonus collected.':''}</div><div class="odds" style="margin-top:6px">Sign in with this email from now on.</div></div>`;
+ if(r.real)return`<div class="panel em-cta"><h3>📧 Verify your email · 🎁 +${b} coins</h3><div class="odds" style="margin-bottom:10px">We sent a link to <b>${nesc(r.email)}</b>. Open it to verify your account, then tap the button below to collect your coins.</div>
+  <div class="row"><button class="btn" data-a="netemcheck"${NET.busy?' disabled':''}>🎁 I've verified — collect ${b}</button><button class="btn s" data-a="netemresend"${NET.busy?' disabled':''}>Resend email</button></div></div>`;
+ return`<div class="panel em-cta"><h3>📧 Add an email · 🎁 +${b} coins</h3><div class="odds" style="margin-bottom:10px">Your account only has a username, so a forgotten password can't be reset. Add an email to protect it — and get <b>${b} free coins</b> once it's confirmed. Other players never see it.</div>
+  ${m.pendEmail?`<div class="odds" style="color:#ffd54a;margin-bottom:10px">Link sent to <b>${nesc(m.pendEmail)}</b>. Open it to confirm. After that, sign in with that email — your coins are added automatically.</div>`:''}
+  <div class="row"><input class="inp" id="netAddEm" type="email" autocomplete="email" autocapitalize="off" spellcheck="false" placeholder="you@example.com" value="${nesc(m.pendEmail||'')}" style="${NIB}"><button class="btn" data-a="netaddem"${NET.busy?' disabled':''}>${m.pendEmail?'Send again':'Send confirm link'}</button></div>
+  ${m.pendEmail?`<div class="row" style="margin-top:8px"><button class="btn s" data-a="netemcheck"${NET.busy?' disabled':''}>I've confirmed it</button></div>`:''}</div>`}
+function netAccountTab(){const c=NET.cloud;return`${netEmailPanel()}
+ <div class="panel"><h3>🔑 Change password</h3><div class="row">${pwField('netNewPw','new-password','New password (6+ characters)',` style="${NIB}"`)}<button class="btn s" data-a="netpw">Change</button></div></div>
+ <div class="panel"><h3>☁️ Cloud save</h3><div class="odds" style="margin-bottom:10px">Your game is saved to your account every minute while you play, so you can continue on any device. ${c&&c.t?'Last backup: '+netAgo(c.t)+'.':'No backup yet.'}</div>
+ <div class="row"><button class="btn" data-a="netbk"${NET.busy?' disabled':''}>☁️ Back up now</button><button class="btn s" data-a="netrs"${NET.busy?' disabled':''}>⬇️ Load cloud save</button></div></div>
+ <div class="panel"><h3>Signed in as ${nesc(NET.au.name)}</h3>${netFlag()?'<div class="odds">🔧 Admin save — online trading is off for this account.</div>':''}<div class="row" style="margin-top:10px"><button class="btn s" data-a="netout">Sign out</button></div></div>`}
+/* ---- the "Me" screen: your profile, front and centre ---- */
+function meView(){if(!netOn())return pageHead('Profile','')+'<div class="panel odds">Sign in to see your profile.</div>';if(!S.drafted)return pageHead('Profile','')+'<div class="panel odds">Draft your team first.</div>';
+ const T=[['view','👤 Profile'],['edit','✏️ Edit'],['acct','⚙️ Account']],cur=T.some(t=>t[0]==NET.meTab)?NET.meTab:'view',em=NET.em&&!(NET.em.real&&NET.em.ver)&&!mp().emBonus;
+ if(cur=='acct'&&!NET.em)netEmailCheck().then(()=>{if(tab=='me')render()});
+ return`${pageHead('Your profile','How other players see you')}
+ <div class="chips" style="margin-bottom:12px">${T.map(t=>`<button class="chip ${t[0]==cur?'on':''}" data-a="metab" data-v="${t[0]}">${t[1]}${t[0]=='acct'&&em?' <b style="color:#ffd54a">🎁</b>':''}</button>`).join('')}</div>
+ ${cur=='view'?`${em?`<div class="note" data-a="metab" data-v="acct" style="cursor:pointer">🎁 ${NET.em.real?'Verify':'Add'} your email to collect ${NET_EMAIL_BONUS.toLocaleString()} free coins</div>`:''}<div class="panel" style="padding:0;overflow:hidden">${netProfileHTML(netMeUser(),'page')}</div>${netFeedTab()}`:cur=='edit'?netProfileTab():netAccountTab()}`}
+/* ---- Home: the online hub ---- */
+function netHubHTML(){if(!netOn()||!S.drafted)return'';const m=mp(),me=netMeUser(),T=RK[S.rk.tier],fr=Object.keys(m.fr).filter(u=>m.fr[u].ok),on=fr.map(netUser).filter(u=>u&&netSeen(u.t)),reals=NET.pool.filter(u=>u.uid!=NET.au.uid&&netSeen(u.t)).length;
+ const nReq=Object.keys(NET.box.req).length,nTr=Object.values(NET.box.tr).filter(t=>t.to==NET.au.uid&&t.st=='open').length,nCh=netUnreadChats(),L=NET.pool.filter(u=>u.c).sort((a,b)=>b.f-a.f),pos=L.findIndex(u=>u.uid==NET.au.uid);
+ const tile=(ic,t,sub,a,v,n)=>`<button class="ohub-t" data-a="${a}" data-v="${v}"><b>${ic}</b><span>${t}</span><i>${sub}</i>${n?`<em>${n}</em>`:''}</button>`;
+ return`<div class="ohub" style="--pc:${NCOL[me.col]}"><div class="ohub-top" data-a="meopen" data-v="me">${netAvatar(me,62)}<div style="min-width:0;flex:1"><div class="ohub-n">${nesc(NET.au.name)}</div><div class="ohub-ti">${nesc(ntTitle(me.ti))}</div><div class="odds">${T.e} ${T.n} · ${S.rk.fame} fame${pos>=0?` · #${pos+1} of ${L.length}`:''}</div></div><span class="ohub-go">Profile ›</span></div>
+ <div class="ohub-grid">${tile('🏅','Ranked',reals?`${reals} player${reals>1?'s':''} online`:'vs real teams','tab','ranked',0)}${tile('👥','Friends',on.length?`${on.length} online`:`${fr.length} friend${fr.length==1?'':'s'}`,'socialtab','friends',nReq)}${tile('💬','Messages',nCh?`${nCh} unread`:'Chat with friends','socialtab','chat',nCh)}${tile('🔁','Trades',nTr?`${nTr} waiting`:'Swap cards','socialtab','trades',nTr)}</div>
+ ${on.length?`<div class="ohub-on">${on.slice(0,8).map(u=>`<span data-a="netprof" data-v="${u.uid}" title="${nesc(u.n)}">${netAvatar(u,36)}<i>${nesc(u.n)}</i></span>`).join('')}</div>`:''}
+ ${L.length>1?`<div class="ohub-lb">${L.slice(0,3).map((u,i)=>`<div data-a="netprof" data-v="${u.uid}"><b>${['🥇','🥈','🥉'][i]}</b>${netAvatar(u,26)}<span>${nesc(u.n)}${u.uid==NET.au.uid?' (you)':''}</span><i>${u.f} fame</i></div>`).join('')}<button class="btn s" data-a="socialtab" data-v="rank" style="width:100%;margin-top:6px">Full leaderboard</button></div>`:''}
+ ${NET.em&&!(NET.em.real&&NET.em.ver)&&!mp().emBonus?`<div class="note" data-a="metab" data-v="acct" style="cursor:pointer;margin:10px 0 0">🎁 ${NET.em.real?'Verify':'Add'} your email to collect ${NET_EMAIL_BONUS.toLocaleString()} free coins</div>`:''}</div>`}
 /* ---- profile editor ---- */
 function netProfileTab(){const p=prof(),me=netMyPub(),owned=Object.keys(S.owned).map(Number).filter(id=>PLAYERS[id]&&!PLAYERS[id].custom).sort((a,b)=>P(b).ovr-P(a).ovr);
  const avs=NAV_AV.map((e,i)=>`<button class="nav-pick${p.a=='e'+i?' on':''}" data-a="netav" data-v="e${i}" aria-label="Avatar ${e}">${e}</button>`).join('')+`<button class="nav-pick${p.a=='m'?' on':''}" data-a="netav" data-v="m" aria-label="Buckets mascot" style="padding:2px">${netAvatar({a:'m',col:p.col},34)}</button>`;
@@ -3425,7 +3534,7 @@ Object.assign(ACT,{
  netcfg:()=>{const c=netCfgClean({apiKey:($('#netKey')||{}).value,dbUrl:($('#netUrl')||{}).value});if(!c){toast('Check both values: the key starts with AIza… and the URL starts with https:// and ends in firebaseio.com or firebasedatabase.app');return}NET.cfg=c;netSaveLocal();render();toast('✅ Saved — now create your account')},
  netunset:()=>askConfirm('Remove the online setup from this device?',()=>{NET.cfg=null;netSignOutLocal();render()}),
  netcopyrules:()=>netCopy(NET_RULES,'#netRules'),netcopycode:()=>netCopy(netSetupCode(),'#netShare'),
- netauth:v=>{const n=($('#netName')||{}).value,p=($('#netPw')||{}).value;NET.msg='';netRun(()=>netAuth(v,n,p).then(()=>{const t=NET.msg2||(v=='up'?'🎉 Account created — welcome!':'👋 Signed in');NET.msg2='';return t}))},
+ netauth:v=>{const n=($('#netName')||{}).value,p=($('#netPw')||{}).value,em=($('#netEmail')||{}).value;NET.msg='';netRun(()=>netAuth(v,n,p,em).then(()=>{const t=NET.msg2||(v=='up'?'🎉 Account created — welcome!':'👋 Signed in');NET.msg2='';return t}))},
  netout:()=>askConfirm('Sign out? Your game is saved to your account first.',()=>{closeModal();const go=()=>{netSignOutLocal();tab='home';render()};netBackup().then(go,go)}),
  netadd:()=>{const n=($('#netFriend')||{}).value;netRun(()=>netFriendAdd(n))},
  netreq:v=>{const yes=v[0]=='y',u=v.slice(2);netRun(()=>netFriendAnswer(u,yes).then(()=>netPool(true).catch(()=>{})),yes?'🤝 Friend added':'Request declined')},
@@ -3446,10 +3555,17 @@ Object.assign(ACT,{
 });
 
 Object.assign(ACT,{
- netgm:v=>{NET.gm=v;NET.msg='';render()},
+ netgm:v=>{NET.gm=v;NET.msg='';render();const f=$(v=='forgot'?'#netFgEmail':v=='up'?'#netEmail':'#netName');if(f&&!f.value)f.focus()},
  netprof:v=>{if(v)netOpenProfile(v)},
- netviewme:()=>netOpenProfile(NET.au.uid),
- netedit:()=>{closeModal();NET.tab='profile';ACT.tab('online')},
+ netviewme:()=>{NET.meTab='view';ACT.tab('me')},
+ metab:v=>{closeModal();NET.meTab=v;if(tab!='me')ACT.tab('me');else render();if(v=='acct')netEmailCheck().then(()=>{if(tab=='me')render()},()=>{})},
+ meopen:()=>{NET.meTab='view';ACT.tab('me')},
+ socialtab:v=>{NET.tab=v;NET.chatWith=null;NET.trd=null;ACT.tab('online')},
+ netforgot:()=>{const e=($('#netFgEmail')||{}).value;netRun(()=>netForgot(e).then(t=>{NET.msg=t;NET.lastId=String(e||'').trim().toLowerCase();return''}))},
+ netaddem:()=>{const e=($('#netAddEm')||{}).value;netRun(()=>netAddEmail(e))},
+ netemcheck:()=>netRun(()=>netEmailCheck(true).then(()=>'')),
+ netemresend:()=>netRun(()=>netResendVerify()),
+ netedit:()=>{closeModal();NET.meTab='edit';ACT.tab('me')},
  netfind:()=>{const n=String(($('#netFriend')||{}).value||'').trim().toLowerCase();if(!netNameOk(n)){toast('Type an exact username (3–14 letters, numbers or _).');return}netDb('GET','names/'+n).then(uid=>{if(!netIdOk(uid)){toast('No player called "'+n+'" was found.');return}netOpenProfile(uid)},e=>toast(netErrText(e)))},
  netpfadd:v=>{closeModal();netRun(()=>netFriendAdd(v))},
  netcl1v1:v=>{closeModal();ACT.net1v1(v)},netcltrade:v=>{closeModal();ACT.tab('online');ACT.nettrade(v)},
@@ -3467,10 +3583,10 @@ Object.assign(ACT,{
  netpw:()=>{const v=($('#netNewPw')||{}).value;netRun(()=>netChangePw(v))}
 });
 document.addEventListener('change',e=>{if(e.target&&e.target.id=='netTeam'){const p=prof();p.tm=+e.target.value;if(!(p.tm>=0&&p.tm<30))p.tm=-1;save();netPublish(true).catch(()=>{});toast('Favorite team saved')}});
-document.addEventListener('keydown',e=>{if(e.key!=='Enter'||!e.target)return;const id=e.target.id;if(id=='netMsg'){e.preventDefault();ACT.netsend(NET.chatWith)}else if(id=='netPw'||id=='netName'){e.preventDefault();ACT.netauth(NET.gm=='up'?'up':'in')}else if(id=='netFriend'){e.preventDefault();ACT.netfind()}});
+document.addEventListener('keydown',e=>{if(e.key!=='Enter'||!e.target)return;const id=e.target.id;if(id=='netMsg'){e.preventDefault();ACT.netsend(NET.chatWith)}else if(id=='netPw'||id=='netName'||id=='netEmail'){e.preventDefault();ACT.netauth(NET.gm=='up'?'up':'in')}else if(id=='netFgEmail'){e.preventDefault();ACT.netforgot()}else if(id=='netAddEm'){e.preventDefault();ACT.netaddem()}else if(id=='netFriend'){e.preventDefault();ACT.netfind()}});
 function netFilter(e){const q=e.value.trim().toLowerCase(),box=document.querySelector('[data-nl="'+e.dataset.nf+'"]');if(box)box.querySelectorAll('[data-nk]').forEach(c=>{c.style.display=!q||c.dataset.nk.includes(q)?'':'none'})}
 document.addEventListener('input',e=>{if(e.target&&e.target.dataset&&e.target.dataset.nf)netFilter(e.target)});
-VIEWS.online=onlineView;SUBS.push('online');NAVOF.online='menu';
+VIEWS.online=onlineView;VIEWS.me=meView;
 netLoadLocal();admSync();
 if(NET.au&&NET.cfg)netAfterLogin().then(ch=>{if(ch){render();if(NET.msg2){toast(NET.msg2);NET.msg2=''}}else netRefresh()},()=>{});
 setInterval(netTick,5000);
