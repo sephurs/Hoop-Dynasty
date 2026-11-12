@@ -3148,6 +3148,7 @@ const NET_RULES=`{
     "cards":   { ".read": "auth != null", "$uid": { ".write": "auth != null && ((auth.uid === $uid && (!root.child('bans').child(auth.uid).exists() || (root.child('bans').child(auth.uid).child('u').val() > 0 && root.child('bans').child(auth.uid).child('u').val() < now))) || root.child('names').child('sephurs').val() === auth.uid)" } },
     "friends": { ".read": "auth != null", "$uid": { ".write": "auth != null && ((auth.uid === $uid && (!root.child('bans').child(auth.uid).exists() || (root.child('bans').child(auth.uid).child('u').val() > 0 && root.child('bans').child(auth.uid).child('u').val() < now))) || root.child('names').child('sephurs').val() === auth.uid)" } },
     "saves":   { "$uid": { ".read": "auth != null && (auth.uid === $uid || root.child('names').child('sephurs').val() === auth.uid)", ".write": "auth != null && (auth.uid === $uid || root.child('names').child('sephurs').val() === auth.uid)" } },
+    "pics":    { ".read": "auth != null", "$uid": { ".write": "auth != null && ((auth.uid === $uid && (!root.child('bans').child(auth.uid).exists() || (root.child('bans').child(auth.uid).child('u').val() > 0 && root.child('bans').child(auth.uid).child('u').val() < now))) || root.child('names').child('sephurs').val() === auth.uid)" } },
     "bans":    { ".read": "auth != null", "$uid": { ".write": "auth != null && root.child('names').child('sephurs').val() === auth.uid" } },
     "adm":     { "$uid": { ".read": "auth != null && (auth.uid === $uid || root.child('names').child('sephurs').val() === auth.uid)", ".write": "auth != null && root.child('names').child('sephurs').val() === auth.uid", "$id": { ".write": "auth != null && (root.child('names').child('sephurs').val() === auth.uid || (auth.uid === $uid && !newData.exists()))" } } },
     "box": { "$uid": {
@@ -3248,11 +3249,13 @@ async function netAfterLogin(skipAdopt){let ch=false;if(!skipAdopt){try{ch=await
 /* ---- public profile ---- */
 function netFlag(){if(S.adm&&S.adm.on)S.adm.used=1;return!!((S.adm&&(S.adm.on||S.adm.used))||PLAYERS.some(p=>p.custom&&S.owned[p.id]!=null))}
 const netCardsStr=()=>Object.keys(S.owned).map(Number).filter(id=>PLAYERS[id]&&!PLAYERS[id].custom).sort((a,b)=>a-b).join(',');
-async function netPublish(force){if(!netOn()||!S.drafted)return;const code=shCode()||'',t=teamInfo(),r=S.rk,p={gh:admAllowed()?1:0,n:NET.au.name,c:code,o:Math.round(t.ovr||0),f:r.fame|0,tr:r.tier|0,w:r.w|0,l:r.l|0,fl:netFlag()?1:0,v:NET_VER,t:Date.now(),...netMyPub()},sig=[p.c,p.f,p.tr,p.w,p.l,p.fl,p.a,p.img.length,p.b,p.col,p.tm,p.ti,p.sc,p.lv,p.cc,p.ch,p.bn,p.bi.length,p.tn].join('|');
+async function netPublish(force){if(!netOn()||!S.drafted)return;const code=shCode()||'',t=teamInfo(),r=S.rk,p={gh:admAllowed()?1:0,n:NET.au.name,c:code,o:Math.round(t.ovr||0),f:r.fame|0,tr:r.tier|0,w:r.w|0,l:r.l|0,fl:netFlag()?1:0,v:NET_VER,t:Date.now(),...netMyPub()},sig=[p.c,p.f,p.tr,p.w,p.l,p.fl,p.a,netHash(p.img),p.b,p.col,p.tm,p.ti,p.sc,p.lv,p.cc,p.ch,p.bn,netHash(p.bi),p.tn].join('|');
  if(!force&&(sig==NET.pubSig||Date.now()-NET.pubAt<15000))return;const oldSig=NET.pubSig;NET.pubSig=sig;NET.pubAt=Date.now();
- try{await netDb('PUT','users/'+NET.au.uid,p);const cs=netCardsStr();if(cs!=NET.cardSig){await netDb('PUT','cards/'+NET.au.uid,cs||'-');NET.cardSig=cs}}catch(e){NET.pubSig=oldSig;throw e}}
-async function netPool(force){if(!netOn())return;if(!force&&Date.now()-NET.poolAt<60000)return;NET.poolAt=Date.now();try{const b=await netDb('GET','bans');NET.bans=b&&typeof b=='object'?b:{}}catch(e){NET.bans=NET.bans||{}}const j=await netDb('GET','users');const out=[];
- if(j&&typeof j=='object')Object.keys(j).forEach(uid=>{const u=j[uid];if(!netIdOk(uid)||!u||typeof u!='object')return;out.push(netParseUser(uid,u))});
+ const img=p.img,bi=p.bi;p.ih=img?netHash(img):'';p.bh=bi?netHash(bi):'';delete p.img;delete p.bi;   // pictures are stored separately and fetched only when someone looks at them
+ try{const ps=p.ih+'|'+p.bh;if(ps!=NET.picSig&&(img||bi||NET.picSig)){await netDb('PUT','pics/'+NET.au.uid,img||bi?{img,bi}:null);NET.picSig=ps}
+  await netDb('PUT','users/'+NET.au.uid,p);const cs=netCardsStr();if(cs!=NET.cardSig){await netDb('PUT','cards/'+NET.au.uid,cs||'-');NET.cardSig=cs}}catch(e){NET.pubSig=oldSig;NET.picSig=null;throw e}}
+async function netPool(force){if(!netOn())return;if(!force&&Date.now()-NET.poolAt<180000)return;NET.poolAt=Date.now();try{const b=await netDb('GET','bans');NET.bans=b&&typeof b=='object'?b:{}}catch(e){NET.bans=NET.bans||{}}const j=await netDb('GET','users');const out=[];
+ if(j&&typeof j=='object'){netSlim(j).catch(()=>{});Object.keys(j).forEach(uid=>{const u=j[uid];if(!netIdOk(uid)||!u||typeof u!='object')return;out.push(netParseUser(uid,u))})}
  NET.pool=out.filter(u=>!netBanned(u.uid))}
 const netUser=uid=>NET.pool.find(u=>u.uid==uid)||null;
 /* ---- opponents built from a real player's published team ---- */
@@ -3296,7 +3299,7 @@ async function netPoll(force){if(!netOn()||NET.polling)return;if(!force&&Date.no
    else tr[id]=t});
   if(JSON.stringify(req)!=JSON.stringify(NET.box.req)||JSON.stringify(tr)!=JSON.stringify(NET.box.tr))changed=true;NET.box={req,tr};
   if(Object.keys(del).length)await netDb('PATCH','box/'+me,del).catch(()=>{});
-  try{if(await netAdmPoll())changed=true}catch(e){}
+  if(force||Date.now()-(NET.admAt||0)>60000){NET.admAt=Date.now();try{if(await netAdmPoll())changed=true}catch(e){}}
   if(changed){const k=Object.keys(m.proc);if(k.length>60)k.slice(0,k.length-60).forEach(x=>delete m.proc[x]);save();netRefresh()}NET.err=''}
  catch(e){netFail(e,true)}finally{NET.polling=false}}
 function netRefresh(){renderTop();const a=document.activeElement,typing=a&&(a.tagName=='INPUT'||a.tagName=='TEXTAREA');if((tab=='online'||tab=='home'||tab=='menu')&&!$('#ov').className&&!typing)render()}
@@ -3435,12 +3438,27 @@ const NBAN=[['Team color','linear-gradient(120deg,var(--pc),#0d1436 85%)'],['Sun
  ['Gold','linear-gradient(120deg,#7a4a05,#ffd35a 42%,#fff3c0 52%,#c8920e 62%,#6a3f04)'],['Emerald','linear-gradient(120deg,#25e08f,#0a7a4a 50%,#062a1d)'],['Midnight','repeating-linear-gradient(45deg,#ffffff0b 0 10px,transparent 10px 20px),linear-gradient(120deg,#0b0f2a,#1c2b6b 60%,#0b0f2a)'],
  ['Void','radial-gradient(circle at 72% 50%,#9b4dff77,transparent 50%),radial-gradient(circle at 18% 30%,#5b16b866,transparent 45%),radial-gradient(circle at 45% 90%,#2a005988,transparent 50%),#000',()=>typeof admAllowed=='function'&&admAllowed()]];
 const NBIMG=/^data:image\/jpeg;base64,[A-Za-z0-9+/=]{100,40000}$/;
-const netBanCss=u=>u.bn=='u'&&u.bi&&NBIMG.test(u.bi)?`background-image:url(${u.bi})`:'background:'+(NBAN[+u.bn]||NBAN[0])[1];
+const netBanCss=u=>{if(u.bn=='u'&&u.bi&&NBIMG.test(u.bi))return`background-image:url(${u.bi})`;if(u.bn=='u')netPicNeed(u);return'background:'+(NBAN[u.bn=='u'?0:+u.bn]||NBAN[0])[1]};
 function prof(){const m=mp();if(!m.pf||typeof m.pf!='object')m.pf={};const p=m.pf;if(typeof p.a!='string')p.a='e0';if(typeof p.b!='string')p.b='';p.col=Math.max(0,Math.min(NCOL.length-1,p.col|0));p.tm=Number.isInteger(p.tm)&&p.tm>=0&&p.tm<30?p.tm:-1;if(typeof p.ti!='string')p.ti='rook';if(!Array.isArray(p.sc))p.sc=[];p.sc=p.sc.filter(id=>S.owned[id]!=null).slice(0,3);if(typeof p.img!='string'||!NIMG.test(p.img))p.img='';if(typeof p.bi!='string'||!NBIMG.test(p.bi))p.bi='';p.bn=p.bn=='u'&&p.bi?'u':String(Math.max(0,Math.min(NBAN.length-1,p.bn|0)));if(NBAN[+p.bn]&&NBAN[+p.bn][2]&&!NBAN[+p.bn][2]())p.bn='0';
  if(!m.blk||typeof m.blk!='object')m.blk={};if(!m.chat||typeof m.chat!='object')m.chat={};if(!m.chu||typeof m.chu!='object')m.chu={};if(!Array.isArray(m.games))m.games=[];return p}
 // Avatar markup for any player's (already-sanitised) profile fields.
+/* ---- picture cache: profile pictures and banners are downloaded once, then kept on this device ---- */
+const netHash=x=>{x=String(x||'');if(!x)return'';let h=5381;for(let i=0;i<x.length;i++)h=((h<<5)+h+x.charCodeAt(i))|0;return(h>>>0).toString(36)+x.length.toString(36)};
+const NPK='hoopDynastyGM_pics';
+function netPicStore(){if(!NET.pics){NET.pics={};try{const o=JSON.parse(localStorage.getItem(NPK)||'{}');if(o&&typeof o=='object')NET.pics=o}catch(e){}}return NET.pics}
+function netPicSave(){try{const P=netPicStore(),k=Object.keys(P);if(k.length>60)k.sort((a,b)=>(P[a].t||0)-(P[b].t||0)).slice(0,k.length-60).forEach(x=>delete P[x]);localStorage.setItem(NPK,JSON.stringify(P))}catch(e){}}
+function netPicFill(u){const c=netPicStore()[u.uid];if(c){if(!u.img&&u.a=='u'&&u.ih&&c.ih==u.ih&&NIMG.test(c.img||''))u.img=c.img;if(!u.bi&&u.bn=='u'&&u.bh&&c.bh==u.bh&&NBIMG.test(c.bi||''))u.bi=c.bi}return u}
+function netPicNeed(u){if(!u||!netIdOk(u.uid)||!netOn()||u.uid==NET.au.uid)return;const want=(u.a=='u'&&u.ih&&!u.img)||(u.bn=='u'&&u.bh&&!u.bi);if(!want)return;
+ const key=u.uid+'|'+u.ih+'|'+u.bh;NET.picTry=NET.picTry||{};if(NET.picTry[key])return;NET.picTry[key]=1;(NET.picQ=NET.picQ||[]).push(u.uid);clearTimeout(NET.picT);NET.picT=setTimeout(netPicFlush,60)}
+async function netPicFlush(){const q=[...new Set(NET.picQ||[])].slice(0,12);NET.picQ=[];let got=0;
+ await Promise.all(q.map(uid=>netDb('GET','pics/'+uid).then(j=>{if(!j||typeof j!='object')return;const u=netUser(uid),c={t:Date.now(),img:NIMG.test(j.img||'')?j.img:'',bi:NBIMG.test(j.bi||'')?j.bi:''};c.ih=netHash(c.img);c.bh=netHash(c.bi);netPicStore()[uid]=c;got++;
+  if(u)netPicFill(u);if(NET.scv&&NET.scv.u.uid==uid)netPicFill(NET.scv.u);if(typeof ADMU!='undefined'&&ADMU&&ADMU.uid==uid)netPicFill(ADMU.u)},()=>{})));
+ if(!got)return;netPicSave();const ov=$('#ov');if(ov.className&&NET.scv&&ov.querySelector('.nprof')&&q.includes(NET.scv.u.uid))modal(netProfileHTML(NET.scv.u,NET.scv.ctx));else netRefresh()}
+// The game's admin client moves pictures out of old, heavy profile records (made before this change).
+async function netSlim(j){if(NET.slimmed||!admAllowed())return;NET.slimmed=true;for(const uid of Object.keys(j)){const u=j[uid];if(!netIdOk(uid)||!u||typeof u!='object'||!(u.img||u.bi))continue;
+ try{const img=NIMG.test(u.img||'')?u.img:'',bi=NBIMG.test(u.bi||'')?u.bi:'';if(img||bi)await netDb('PUT','pics/'+uid,{img,bi});await netDb('PATCH','users/'+uid,{img:null,bi:null,ih:img?netHash(img):'',bh:bi?netHash(bi):''})}catch(e){}}}
 function netAvatar(u,sz){sz=sz||40;const col=NCOL[Math.max(0,Math.min(NCOL.length-1,u.col|0))],box=`width:${sz}px;height:${sz}px;border-radius:50%;flex:none;display:inline-flex;align-items:center;justify-content:center;overflow:hidden;border:2px solid ${col};background:radial-gradient(circle at 35% 30%,${col}55,#0d1436 70%);box-shadow:0 0 12px ${col}44`;
- const a=String(u.a||'e0');let inner;
+ const a=String(u.a||'e0');let inner;if(a=='u'&&!u.img)netPicNeed(u);
  if(a=='u'&&u.img&&NIMG.test(u.img))inner=`<img src="${u.img}" alt="" style="width:100%;height:100%;object-fit:cover">`;
  else if(a=='m')inner=`<span style="width:92%;display:block">${GMSVG2.replace('viewBox="0 0 200 320"','viewBox="6 24 192 200"')}</span>`;
  else if(/^p\d{1,4}$/.test(a)&&PLAYERS[+a.slice(1)]&&!PLAYERS[+a.slice(1)].custom){const p=PLAYERS[+a.slice(1)],src=phUrl(p);inner=src?`<img src="${src}" alt="" style="width:130%;max-width:none;margin-top:18%" onerror="this.replaceWith(document.createTextNode('🏀'))">`:`<span style="font-size:${sz*.5}px">🏀</span>`}
@@ -3450,9 +3468,9 @@ const netSeen=t=>Date.now()-(+t||0)<4*60000;
 const netDot=t=>netSeen(t)?'<span title="Online now" style="display:inline-block;width:9px;height:9px;border-radius:50%;background:#4cff9a;box-shadow:0 0 8px #4cff9a;margin-left:6px;vertical-align:1px"></span>':'';
 function netMyPub(){const p=prof();return{tn:myTeamName(),bn:p.bn,bi:p.bn=='u'?p.bi:'',a:p.a,img:p.a=='u'?p.img:'',b:ntext(p.b,150),col:p.col,tm:p.tm,ti:NTITLES.some(x=>x.id==p.ti&&x.ok())?p.ti:'rook',sc:netPackCards(p.sc),lv:gmLvl(),cc:Object.keys(S.owned).length,ch:S.st.titles|0}}
 function netParseSc(v){v=String(v||'').trim();if(!v)return[];if(v.includes(':'))return netUnpackCards(v);return v.split(',').filter(x=>/^\d{1,4}$/.test(x)).map(Number).filter(i=>PLAYERS[i]&&!PLAYERS[i].custom).slice(0,3).map(id=>({id,tr:[0,0,0,0,0,0],pr:0}))}
-function netParseUser(uid,u){return{uid,n:nx(u.n)||'player',c:typeof u.c=='string'?u.c.slice(0,200):'',o:Math.max(0,Math.min(200,u.o|0)),f:Math.max(0,Math.min(99999,u.f|0)),tr:Math.max(0,Math.min(RK.length-1,u.tr|0)),w:Math.max(0,u.w|0),l:Math.max(0,u.l|0),fl:u.fl?1:0,v:u.v|0,t:+u.t||0,
+function netParseUser(uid,u){return netPicFill({uid,ih:typeof u.ih=='string'?u.ih.slice(0,12):'',bh:typeof u.bh=='string'?u.bh.slice(0,12):'',n:nx(u.n)||'player',c:typeof u.c=='string'?u.c.slice(0,200):'',o:Math.max(0,Math.min(200,u.o|0)),f:Math.max(0,Math.min(99999,u.f|0)),tr:Math.max(0,Math.min(RK.length-1,u.tr|0)),w:Math.max(0,u.w|0),l:Math.max(0,u.l|0),fl:u.fl?1:0,v:u.v|0,t:+u.t||0,
  a:typeof u.a=='string'&&/^(e\d{1,2}|m|u|p\d{1,4})$/.test(u.a)?u.a:'e0',img:typeof u.img=='string'&&NIMG.test(u.img)?u.img:'',b:ntext(u.b,150),col:Math.max(0,Math.min(NCOL.length-1,u.col|0)),tm:Number.isInteger(u.tm)&&u.tm>=0&&u.tm<30?u.tm:-1,ti:typeof u.ti=='string'&&NTITLES.some(x=>x.id==u.ti)?u.ti:'rook',
- sc:netParseSc(u.sc),gh:u.gh?1:0,tn:shClean(u.tn),bn:u.bn=='u'&&typeof u.bi=='string'&&NBIMG.test(u.bi)?'u':String(Math.max(0,Math.min(NBAN.length-1,u.bn|0))),bi:typeof u.bi=='string'&&NBIMG.test(u.bi)?u.bi:'',lv:Math.max(1,Math.min(99,u.lv|0)),cc:Math.max(0,Math.min(9999,u.cc|0)),ch:Math.max(0,Math.min(9999,u.ch|0))}}
+ sc:netParseSc(u.sc),gh:u.gh?1:0,tn:shClean(u.tn),bn:u.bn=='u'&&((typeof u.bi=='string'&&NBIMG.test(u.bi))||u.bh)?'u':String(Math.max(0,Math.min(NBAN.length-1,u.bn|0))),bi:typeof u.bi=='string'&&NBIMG.test(u.bi)?u.bi:'',lv:Math.max(1,Math.min(99,u.lv|0)),cc:Math.max(0,Math.min(9999,u.cc|0)),ch:Math.max(0,Math.min(9999,u.ch|0))})}
 /* ---- per-account saves: each account has its own game; the cloud copy follows you between devices ---- */
 function netLoadCloudSave(cloud){const r=parseSave(cloud.s);if(r.err)throw{text:r.err};S=r.s;const m=mp();m.owner=NET.au.uid;m.bkT=+cloud.t||Date.now();D=null;G=null;MU=null;tab='home';save();NET.dirty=false;return true}
 async function netAdopt(){const uid=NET.au.uid,m=mp();let cloud;
