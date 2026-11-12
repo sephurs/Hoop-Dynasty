@@ -481,7 +481,7 @@ tr.star td{text-shadow:0 0 10px #ffc93366}
 .nav-me{position:relative;cursor:pointer;display:inline-flex;margin-left:4px}.nav-badge{position:absolute;top:-5px;right:-7px;min-width:17px;height:17px;padding:0 4px;border-radius:9px;background:#ff3b4e;color:#fff;font:800 10.5px/17px system-ui;text-align:center;font-style:normal}
 .nav-grid{display:flex;flex-wrap:wrap;gap:6px}.nav-pick{width:44px;height:44px;border-radius:12px;border:1px solid #333f78;background:#141c45;font-size:22px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center}.nav-pick.on{border-color:#ffd35a;box-shadow:0 0 0 2px #ffd35a66}.nav-pick:focus-visible,.nav-sw:focus-visible{outline:2px solid #7df9ff;outline-offset:2px}
 .nav-sw{width:34px;height:34px;border-radius:50%;border:3px solid transparent;cursor:pointer}.nav-sw.on{border-color:#fff;box-shadow:0 0 12px #fff8}
-.nprof{position:relative;margin:-6px}.nprof-band{height:64px;border-radius:14px 14px 0 0;background:linear-gradient(120deg,var(--pc),#0d1436 85%);opacity:.9}.nprof-head{display:flex;gap:14px;align-items:flex-start;margin:-42px 12px 8px}.nprof-head>div{margin-top:46px}.nprof-n{font-size:22px;font-weight:900}.nprof-ti{color:var(--pc);font-weight:800;font-size:13px}
+.nprof{position:relative;margin:-6px}.nprof-band{height:64px;border-radius:14px 14px 0 0;background:linear-gradient(120deg,var(--pc),#0d1436 85%);opacity:.9}.nprof-head{position:relative;z-index:1;display:flex;gap:14px;align-items:flex-start;margin:-42px 12px 8px}.nprof-head>div{margin-top:46px}.nprof-n{font-size:22px;font-weight:900}.nprof-ti{color:var(--pc);font-weight:800;font-size:13px}
 .nprof-bio{margin:8px 12px;padding:10px 12px;border-radius:12px;background:#0f1535;border:1px solid #222c58;line-height:1.45;white-space:pre-wrap;word-break:break-word}
 .nprof-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:10px 12px}.nprof-stats div{background:#0f1535;border:1px solid #222c58;border-radius:12px;padding:8px;text-align:center}.nprof-stats b{display:block;font-size:15px}.nprof-stats i{display:block;font-style:normal;font-size:11px;color:var(--mu)}
 .nprof-sc{display:flex;gap:6px;margin:0 12px;flex-wrap:wrap}.nprof .row{margin-left:12px;margin-right:12px}
@@ -503,6 +503,16 @@ tr.star td{text-shadow:0 0 10px #ffc93366}
 .ohub-lb{margin-top:12px;display:flex;flex-direction:column;gap:5px}.ohub-lb>div{display:flex;align-items:center;gap:8px;padding:6px 8px;border-radius:10px;background:#0a103088;cursor:pointer}.ohub-lb span{flex:1;min-width:0;font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.ohub-lb i{font-style:normal;font-size:12px;color:var(--mu)}
 .em-cta{border-color:#ffd35a88;box-shadow:0 0 0 1px #ffd35a33,0 0 24px #ffd35a22}
 .nprof.page{margin:0}.nprof.page .nprof-band{border-radius:0;height:76px}.nprof-ln{margin:6px 12px}.nprof-btns{margin:14px 12px 14px;gap:8px;flex-wrap:wrap}
+
+#nav button.fab::after,#nav button[data-v=me]::after{display:none}#nav button[data-v=me].on b{transform:none;filter:none}
+.nprof-card{background:none;border:0;padding:0;cursor:pointer;color:var(--tx);font:inherit;text-align:left;display:block;border-radius:12px;transition:transform .15s}.nprof-card:hover{transform:translateY(-3px)}.nprof-card:focus-visible{outline:2px solid #7df9ff;outline-offset:2px}
+.scv{display:flex;gap:16px;flex-wrap:wrap;align-items:flex-start}.scv-card{flex:none;margin:0 auto}.scv-card .card{transform:none!important;animation:none!important}.scv-info{flex:1;min-width:220px}
+.scv-ovr{display:flex;align-items:baseline;gap:8px;margin:8px 0 10px}.scv-ovr b{font-size:34px;font-weight:900}.scv-ovr span{color:var(--mu);font-weight:800}.scv-ovr i{font-style:normal;font-weight:600}
+.scv-st{display:grid;grid-template-columns:92px 1fr 34px 28px;align-items:center;gap:8px;margin:5px 0;font-size:13px}.scv-st span{color:var(--mu)}.scv-st b{text-align:right;font-variant-numeric:tabular-nums}.scv-st em{font-style:normal;font-size:11px;color:#7dff9a}
+.scv-bar{height:7px;border-radius:4px;background:#ffffff14;overflow:hidden}.scv-bar i{display:block;height:100%;border-radius:4px;background:linear-gradient(90deg,#ff7a1a,#ffd35a)}
+.scv-tr{display:flex;flex-direction:column;gap:6px;margin-top:10px}.scv-tr div{background:#0f1535;border:1px solid #222c58;border-radius:10px;padding:6px 9px}.scv-tr b{display:block;font-size:13px}.scv-tr span{font-size:11.5px;color:var(--mu)}
+.ivname{display:flex;gap:8px;margin:10px 0 2px}.ivname .inp{flex:1;min-width:0;font-size:17px}.ivname-err{font-size:12px;color:#9aa6d8;margin-top:4px;min-height:16px}.ivname-err.bad{color:#ff8a8a}
+.ivprev{display:flex;align-items:center;gap:14px;padding:12px 18px;border-radius:18px;background:linear-gradient(160deg,#18225dee,#0a1030f2);border:1px solid #ffffff30;box-shadow:0 10px 30px #000a}.ivprev b{display:block;font-size:22px;font-weight:900;color:#fff}.ivprev i{display:block;font-style:normal;color:#ffb347;font-weight:800;font-size:13px}
 </style></head><body>
 
 <header id="top"></header><main id="main"></main>
@@ -1641,7 +1651,7 @@ function mkOpp(rt,name){return buildOpp(rt,name)}   // opponents are now teams o
 // Possession-based simulation. Returns scores, quarter scores, play-by-play log and box score data.
 function sim(A,B){
  const cm=v=>75+SIM_COMP*(v-75);   // rating gaps are compressed inside a single possession, so a better team wins by a believable margin, not by 40
- const T=[A,B].map(t=>{const all=t.st.concat(t.bn).map(p=>({...p,shooting:cm(p.shooting),three:cm(p.three),passing:cm(p.passing),defense:cm(p.defense),rebounding:cm(p.rebounding),athleticism:cm(p.athleticism),pts:0,reb:0,ast:0,stl:0}));return{name:t.name,b:t.b,tac:t.tac,all,st:all.slice(0,5),bn:all.slice(5)}});
+ const T=[A,B].map(t=>{const all=t.st.concat(t.bn).map(p=>({...p,shooting:cm(p.shooting),three:cm(p.three),passing:cm(p.passing),defense:cm(p.defense),rebounding:cm(p.rebounding),athleticism:cm(p.athleticism),pts:0,reb:0,ast:0,stl:0,blk:0}));return{name:t.name,b:t.b,tac:t.tac,all,st:all.slice(0,5),bn:all.slice(5)}});
  const sc=[0,0],qs=[[],[]],log=[];
  const av=(a,f)=>a.reduce((s,p)=>s+f(p),0)/a.length;
  const wp=(a,f)=>{let r=Math.random()*a.reduce((s,p)=>s+f(p),0);for(const p of a){r-=f(p);if(r<=0)return p}return a[0]};
@@ -1656,6 +1666,7 @@ function sim(A,B){
   if(hasT(dc,'BLK')&&Math.random()<.07){const bl=wp(dc.filter(p=>p.trt&&p.trt.includes('BLK')),p=>p.defense**2);bl.blk=(bl.blk||0)+1;return add(q,i,n,`🚫 ${bl.name} blocks ${sh.name}!`)}
   if(Math.random()<pr){const pts=is3?3:2,as=Math.random()<(hasT(oc,'GEN')?.72:.6)?wp(oc.filter(p=>p!==sh),p=>p.passing**2):null;sh.pts+=pts;sc[o]+=pts;if(as)as.ast++;
    return add(q,i,n,`${is3?'🔥 '+sh.name+' hits a three':sh.name+' scores inside'}${as?' (ast: '+as.name+')':''} — ${O.name} +${pts}`)}
+  {const bc=Math.max(.01,Math.min(.14,.03+(av(dc,p=>p.defense+p.athleticism)/2-70)*.0025+(is3?-.02:.02)));if(Math.random()<bc){const bl=wp(dc,p=>((p.defense+p.athleticism)/2)**3*(p.pos=='C'||p.pos=='PF'?1.8:1)*(hasT([p],'BLK')?1.6:1));bl.blk=(bl.blk||0)+1}}
   const rb=Math.random()<.27+(av(oc,p=>p.rebounding)-av(dc,p=>p.rebounding))*.003?wp(oc,p=>p.rebounding**2*(hasT([p],'GLS')?1.5:1)):wp(dc,p=>p.rebounding**2*(hasT([p],'GLS')?1.5:1));rb.reb++;
   add(q,i,n,`${sh.name} misses the ${is3?'three':'shot'}; ${rb.name} grabs the board`)};
  const quarter=(q,n)=>{const s0=sc.slice();const f0=Math.random()<.5?0:1;for(let i=0;i<n;i++){poss(f0,q,i,n);poss(1-f0,q,i,n)}
@@ -1706,7 +1717,7 @@ function runGame(kind,spec,t){
 // Career/season stats after a game (exhibitions only count toward career stats)
 function aftermath(res,ex,after){
  const mine=res.T[0].all.filter(p=>p.id!=null);
- mine.forEach((p,i)=>{if(i>7)return;[S.car].concat(ex?[]:[S.ss]).forEach(o=>{const c=o[p.id]=o[p.id]||{gp:0,pts:0,reb:0,ast:0,stl:0,mvp:0,dpoy:0};c.gp++;c.pts+=p.pts;c.reb+=p.reb;c.ast+=p.ast;c.stl+=p.stl});
+ mine.forEach((p,i)=>{if(i>7)return;[S.car].concat(ex?[]:[S.ss]).forEach(o=>{const c=o[p.id]=o[p.id]||{gp:0,pts:0,reb:0,ast:0,stl:0,mvp:0,dpoy:0};c.gp++;c.pts+=p.pts;c.reb+=p.reb;c.ast+=p.ast;c.stl+=p.stl;c.blk=(c.blk||0)+(p.blk|0)});
   if(p.pts>=30)ev('p30');S.st.best=Math.max(S.st.best||0,p.pts)});
 }
 function endSeason(after){const s=S.season,rows=Object.entries(S.ss).filter(([k,c])=>c.gp>=5&&PLAYERS[k]);
@@ -2030,7 +2041,7 @@ function detail(id){const p=P(id),inB=S.bench.includes(id),inL=POS.some(x=>S.lin
  <h3>Role</h3><div>${roleChip(p.role)} <b>${ROLES[p.role][1]}</b> <span class="odds">${ROLES[p.role][2]}</span></div>
  <h3>Traits</h3>${p.trt.length?p.trt.map(k=>`<div>${TRAIT[k][0]} <b>${TRAIT[k][1]}</b> <span class="odds">${TRAIT[k][2]}</span></div>`).join(''):'<div class="odds">No traits yet — train stats to unlock them.</div>'}
  <h3 style="margin-top:10px">Training <small class="odds">(cap ${cap} per stat · ${S.trq.length}/${facSlots()} slots busy)</small></h3>${trJob(id)?`<div class="note">🏋️ In training: ${SL[trJob(id).i]} +1 — <a href="#" data-a="tab" data-v="training" style="color:var(--ac)">open Training</a></div>`:''}${STATS.map((k,i)=>{const full=p.trn[i]>=cap||p[k]>=p.capk[k],busy=!!trJob(id)||S.trq.length>=facSlots();return`<div class="syn"><span>${SL[i]} <b style="color:#fff">${p[k]}</b> <small>(+${p.trn[i]})</small></span><button class="btn s" ${full||busy?'disabled':''} data-a="train" data-v="${id}|${i}">${full?'MAX':'+1 · 🪙 '+trFee(p,i)+' · ⏱ '+fmtDur(trDur(p,i))}</button></div>`}).join('')}
- ${prestigeHTML(p)}<h3 style="margin-top:10px">Career</h3><div class="odds">${c.gp} GP · ${(c.pts/g).toFixed(1)} PPG · ${(c.reb/g).toFixed(1)} RPG · ${(c.ast/g).toFixed(1)} APG · ${(c.stl/g).toFixed(1)} SPG · 🏅 MVP ${c.mvp} · DPOY ${c.dpoy}</div></div></div>
+ ${prestigeHTML(p)}<h3 style="margin-top:10px">Career</h3><div class="odds">${c.gp} GP · ${(c.pts/g).toFixed(1)} PPG · ${(c.reb/g).toFixed(1)} RPG · ${(c.ast/g).toFixed(1)} APG · ${(c.stl/g).toFixed(1)} SPG · ${((c.blk||0)/g).toFixed(1)} BPG · 🏅 MVP ${c.mvp} · DPOY ${c.dpoy}</div></div></div>
  <div class="row" style="justify-content:center;margin-top:14px">${elig(p).map((sl,i)=>`<button class="btn${i?' s':''}" data-a="start" data-v="${id}|${sl}">Start at ${sl}</button>`).join('')}<button class="btn s" data-a="bench" data-v="${id}">To bench</button>${inL||inB?`<button class="btn s" data-a="unset" data-v="${id}">Remove from lineup</button>`:''}<button class="btn s" data-a="cmpadd" data-v="${id}">⚖️ Compare</button><button class="btn s" data-a="protog" data-v="${id}">${(S.prot.m[id])?'🛡 Unprotect':'🛡 Protect'}</button><button class="btn s" data-a="sell" data-v="${id}">Sell</button><button class="btn s" data-a="close">Close</button></div>`)}
 function playView(){const s=S.season,n=nextOpp(),t=teamInfo();
  return`<h2>Play</h2><div class="hub">${tile('ranked',RK[S.rk.tier].e,'Ranked ladder',RK[S.rk.tier].n+' · '+S.rk.fame+' fame · '+S.rk.w+'-'+S.rk.l,'#ff3b4e','#6a0f22','','tab',true)}${dailyTile()}${tile('weekly','🏆','Weekly Event','Bracket run · rules change weekly','#ffc933','#8a5a0a')}${tile('rivals','😤','Rival GMs','Head-to-head records','#ff8a3d','#7a2a0a')}${tile('ex','🎯','Exhibition','Quick game vs a random team','#3b9cff','#173a8a','','play')}${tile('x','⚡','Auto lineup','Best 5 + bench','#2fd0a0','#0f5a4a','','auto')}</div><h3 style="margin:4px 0 10px">📅 Season</h3><div class="panel"><div class="row" style="justify-content:space-between"><div><h3>Season ${s.n} · ${s.w}-${s.l}</h3><div class="odds">${statusText()}</div><div class="odds">🏆 Title streak: <b>${S.streak||0}</b> · League difficulty: <b>${s.b}</b></div>
@@ -2043,11 +2054,11 @@ function gameView(){const g=G,r=g.res,d=g.done;
  return`<div class="panel board"><div class="tm">${g.me.name}<b id="sa">${d?r.sa:0}</b></div><div class="mid"><div id="qt">${d?'FINAL':'Q1 12:00'}</div><small>${g.label}</small></div><div class="tm">${g.opp.name} <small>(${g.opp.rt})</small><b id="sb">${d?r.sb:0}</b></div></div>`+oppLine(g)+
  (d?finalHTML():`<div class="row" style="margin-bottom:10px"><button class="btn s" data-a="skip">⏩ Skip to final</button></div><div id="feed" class="panel feed"></div>`)}
 function finalHTML(){const g=G,r=g.res,qn=r.qs[0].map((_,i)=>i<4?'Q'+(i+1):'OT');
- const box=t=>`<div class="panel"><h3>${t.name}</h3><div class="sc"><table><tr><th>Player</th><th>PTS</th><th>REB</th><th>AST</th><th>STL</th></tr>${t.all.map(p=>`<tr class="${r.top.includes(p)?'star':''}"><td>${r.top.includes(p)?'⭐ ':''}${p.name} <small>${p.pos}</small></td><td>${p.pts}</td><td>${p.reb}</td><td>${p.ast}</td><td>${p.stl}</td></tr>`).join('')}</table></div></div>`;
+ const box=t=>`<div class="panel"><h3>${t.name}</h3><div class="sc"><table><tr><th>Player</th><th>PTS</th><th>REB</th><th>AST</th><th>STL</th><th>BLK</th></tr>${t.all.map(p=>`<tr class="${r.top.includes(p)?'star':''}"><td>${r.top.includes(p)?'⭐ ':''}${p.name} <small>${p.pos}</small></td><td>${p.pts}</td><td>${p.reb}</td><td>${p.ast}</td><td>${p.stl}</td></tr>`).join('')}</table></div></div>`;
  return`<div class="panel" style="text-align:center"><h2 style="color:${g.win?'#7dff9a':'#ff6b6b'}">${g.win?'VICTORY! 🎉':'DEFEAT'}</h2><div>Rewards: 🪙 +${g.coins}${g.gems?` · 💎 +${g.gems}`:''}</div>${(g.after||[]).map(x=>`<div style="margin-top:4px">${x}</div>`).join('')}
  ${S.season.done&&g.label!='Exhibition'?`<div style="margin-top:6px"><b>${S.season.msg}</b></div>`:''}</div>
  ${pcHTML()}<div class="panel sc"><table><tr><th>Team</th>${qn.map(q=>`<th>${q}</th>`).join('')}<th>T</th></tr><tr><td>${r.T[0].name}</td>${r.qs[0].map(x=>`<td>${x}</td>`).join('')}<td><b>${r.sa}</b></td></tr><tr><td>${r.T[1].name}</td>${r.qs[1].map(x=>`<td>${x}</td>`).join('')}<td><b>${r.sb}</b></td></tr></table></div>
- <div class="panel"><h3>Top performers</h3>${r.top.map(p=>`<div>⭐ <b>${p.name}</b> — ${p.pts} pts, ${p.reb} reb, ${p.ast} ast, ${p.stl} stl</div>`).join('')}</div>${box(r.T[0])}${box(r.T[1])}
+ <div class="panel"><h3>Top performers</h3>${r.top.map(p=>`<div>⭐ <b>${p.name}</b> — ${p.pts} pts, ${p.reb} reb, ${p.ast} ast, ${p.stl} stl, ${p.blk|0} blk</div>`).join('')}</div>${box(r.T[0])}${box(r.T[1])}
  <div class="row"><button class="btn" data-a="cont">Continue</button>${g.kind=='ex'||g.kind=='rk'?`<button class="btn s" data-a="next">▶ ${g.kind=='rk'?'Find next match':'Next exhibition'}</button>`:''}</div>`}
 let CF={q:'',rar:'',own:''};
 function collList(){let l=PLAYERS.filter(p=>!p.custom||S.owned[p.id]!=null).sort((a,b)=>b.rar-a.rar||b.ovr-a.ovr);if(CF.q)l=l.filter(p=>p.name.toLowerCase().includes(CF.q));if(CF.rar!=='')l=l.filter(p=>p.rar==CF.rar);
@@ -2187,6 +2198,7 @@ const ivCard=id=>`<div class="ivc">${card(Pb(id))}</div>`;
 const ivBest=(r,pos)=>{const L=PUBP.filter(p=>p.rar==r&&(!pos||p.pos==pos)).sort((a,b)=>b.ovr-a.ovr);return L[0]};
 function ivVisual(k){
  if(k=='hero')return`<div class="vh"><div class="rays"></div><div class="ivtro">🏆</div><div class="vh-t">Draft · Collect · Train · Win</div></div>`;
+ if(k=='name'){const n=NET&&NET.au&&NET.au.name;return`<div class="ivprev">${typeof netAvatar=='function'?netAvatar({a:'m',col:0},64):''}<div><b id="ivPrevN">${n?nesc(n):'your_name'}</b><i>Rookie GM · 🌱 Rookie</i></div></div><div class="vcap">${n?'Welcome to the league!':'This is how other players will see you'}</div>`}
  if(k=='pos')return`<div class="vp">${['PG','SG','SF','PF','C'].map((p,i)=>`<div class="pl" style="animation-delay:${i*.12}s"><b>${p}</b><i>${['Point Guard','Shooting Guard','Small Fwd','Power Fwd','Center'][i]}</i></div>`).join('')}</div><div class="vcap">Your starting five</div>`;
  if(k=='snake'){const row=(l,rev)=>`<div class="sr"><span class="rl">${l}</span>${(rev?[3,2,1,0]:[0,1,2,3]).map((t,i)=>`<span class="tm ${t==0?'me':''}" style="animation-delay:${i*.14+(rev?.5:0)}s">${t==0?'YOU':'CPU '+t}</span>${i<3?`<span class="ar">${rev?'◀':'▶'}</span>`:''}`).join('')}</div>`;return`<div class="vs">${row('RD 1',0)}${row('RD 2',1)}${row('RD 3',0)}</div><div class="vcap">Snake draft — the order flips every round</div>`}
  if(k=='rar'){const rs=[0,1,2,3,4,5].map(r=>ivBest(r)).filter(Boolean);return`<div class="fan">${rs.map((p,i)=>`<div class="fc1" style="--i:${i};--n:${rs.length};animation-delay:${i*.13}s">${ivCard(p.id)}</div>`).join('')}</div><div class="vcap">${RAR.map((r,i)=>`<span style="color:var(--c${i});font-weight:800">${r}</span>`).join(' · ')}</div>`}
@@ -2194,20 +2206,26 @@ function ivVisual(k){
  if(k=='modes')return`<div class="vl">${RK.map((t,i)=>`<div class="st" style="height:${26+i*11}px;animation-delay:${i*.1}s;--c:${t.c}"><b>${t.e}</b><i>${t.n}</i></div>`).join('')}</div><div class="vcap">🏆 Season mode · Ranked ladder: Rookie → GOAT</div>`;
  if(k=='info')return`<div class="vt">${[['📊','Overall'],['🧩','Synergies'],['🎚️','Difficulty'],['🏅','Ranked']].map((t,i)=>`<div class="tl" style="animation-delay:${i*.12}s"><b>${t[0]}</b><i>${t[1]}</i></div>`).join('')}</div><div class="vcap">⚙️ Settings → Info</div>`;
  return`<div class="vg"><div class="bb">🏀</div><div class="vh-t big">LET'S DRAFT!</div></div>`}
-function ivShow(i){const el=$('#ivvis');if(!el)return;el.className='';el.innerHTML=ivVisual(INTRO_V[i]||'hero');void el.offsetWidth;el.className='in';const d=$('#ivdots');if(d)d.innerHTML=INTRO.map((_,k)=>`<i class="${k==i?'on':k<i?'dn':''}"></i>`).join('')}
-function startIntro(replay){clearTimeout(IN.timer);IN={on:true,i:0,typing:false,ready:false,ending:false,timer:0,replay:!!replay,began:false};const el=$('#intro');
+function ivShow(i){const el=$('#ivvis');if(!el)return;const L=IN.lines||INTRO,V=IN.vis||INTRO_V;el.className='';el.innerHTML=ivVisual(V[i]||'hero');void el.offsetWidth;el.className='in';const d=$('#ivdots');if(d)d.innerHTML=L.map((_,k)=>`<i class="${k==i?'on':k<i?'dn':''}"></i>`).join('')}
+const IV_NAME="First things first — what should the league call you? Pick a username. Every GM you play, trade and chat with will see it.";
+function startIntro(replay,opt){opt=opt||{};clearTimeout(IN.timer);let lines=INTRO.slice(),vis=INTRO_V.slice();
+ if(opt.name){if(S.introDone){lines=["Hey! I'm Buckets 👑. Before you head back out, your account still needs a username.",IV_NAME,"Nice to meet you, {name}! Let's get back to it."];vis=['hero','name','go']}
+  else{lines.splice(1,0,IV_NAME,"Nice to meet you, {name}! 🤝 That's how every GM in the league will know you.");vis.splice(1,0,'name','name')}}
+ IN={on:true,i:0,typing:false,ready:false,ending:false,timer:0,replay:!!replay,began:false,lines,vis,naming:!!opt.name,wait:false};const el=$('#intro');
  el.innerHTML=`<div class="iv-bg"><div class="sp s1"></div><div class="sp s2"></div><div class="sp s3"></div>${ivBanner('#c2410c','🏆',6)}${ivBanner('#1d4ed8','🏆',86)}${ivBanner('#7c3aed','🏆',16)}<div class="crowd">${ivCrowd()}</div><div class="iv-hoop"><svg viewBox="0 0 160 130"><rect x="14" y="4" width="132" height="84" rx="8" fill="#ffffff14" stroke="#fff" stroke-opacity=".7" stroke-width="3"/><rect x="56" y="38" width="48" height="36" fill="none" stroke="#ff7a1a" stroke-width="3"/><ellipse cx="80" cy="98" rx="30" ry="8" fill="none" stroke="#ff7a1a" stroke-width="5"/><path d="M52 100l10 26M70 106l4 22M90 106l-4 22M108 100l-10 26M62 126h36" stroke="#fff" stroke-opacity=".6" stroke-width="2" fill="none"/></svg></div><div class="floor"></div><div class="circle"></div>${Array.from({length:26},(_,i)=>`<span class="em" style="left:${(i*37)%100}%;animation-delay:${(i*.7)%6}s;animation-duration:${6+(i%5)*1.6}s;width:${2+i%4}px;height:${2+i%4}px"></span>`).join('')}</div>
  <div class="iv-flash"></div>
  <div class="iv-title"><div class="ring"></div><div class="ring r2"></div><div class="t1">HOOP</div><div class="t2">DYNASTY</div><div class="t3">GM · BUILD YOUR LEGACY</div><button class="btn s ivskip0" data-a="introskip">Skip</button></div>
- <div class="iv-stage"><div id="ivvis"></div><div class="iv-gm" id="ivgm">${GMSVG2}</div><div class="iv-box"><div class="gtag">👑 BUCKETS</div><div id="btxt"></div><div class="ft"><div id="ivdots"></div><small>👆 tap to continue</small><button class="btn s" data-a="introskip">Skip</button></div></div></div>`;
+ <div class="iv-stage"><div id="ivvis"></div><div class="iv-gm" id="ivgm">${GMSVG2}</div><div class="iv-box"><div class="gtag">👑 BUCKETS</div><div id="btxt"></div><div id="ivnm"></div><div class="ft"><div id="ivdots"></div><small>👆 tap to continue</small><button class="btn s" data-a="introskip">Skip</button></div></div></div>`;
  el.className='';void el.offsetWidth;el.className='show';ivShow(0);beep(70,.5,'sawtooth',.06);IN.timer=setTimeout(introBegin,3700)}
 function introBegin(){if(!IN.on||IN.began)return;IN.began=true;clearTimeout(IN.timer);const el=$('#intro');el.classList.add('began');IN.timer=setTimeout(introType,1100)}
-function introType(){if(!IN.on)return;const line=INTRO[IN.i],bt=$('#btxt'),gm=$('#ivgm');let k=0;IN.ready=true;IN.typing=true;bt.className='t';ivShow(IN.i);if(gm)gm.classList.add('talk');
- const tick=()=>{if(!IN.typing)return;k++;bt.textContent=line.slice(0,k);if(k%3==0)beep(520+(k%7)*30,.03,'square',.012);if(k<line.length)IN.timer=setTimeout(tick,24);else{IN.typing=false;bt.className='';if(gm)gm.classList.remove('talk')}};tick()}
-function introNext(){if(!IN.on||IN.ending)return;if(!IN.began){introBegin();return}if(!IN.ready)return;
- if(IN.typing){IN.typing=false;clearTimeout(IN.timer);const bt=$('#btxt'),gm=$('#ivgm');bt.textContent=INTRO[IN.i];bt.className='';if(gm)gm.classList.remove('talk');return}
- IN.i++;if(IN.i>=INTRO.length)return introEnd();introType()}
-function introEnd(){if(!IN.on||IN.ending)return;IN.ending=true;IN.typing=false;clearTimeout(IN.timer);const el=$('#intro');el.classList.add('out');
+const ivLine=i=>String((IN.lines||INTRO)[i]||'').replace('{name}',NET&&NET.au&&NET.au.name?NET.au.name:'GM');
+function ivNameUI(){const b=$('#ivnm');if(!b)return;IN.wait=true;b.innerHTML=`<div class="ivname"><input class="inp" id="ivName" maxlength="14" autocomplete="username" autocapitalize="off" spellcheck="false" placeholder="username"><button class="btn" data-a="ivclaim">That's me!</button></div><div class="ivname-err" id="ivNameErr">3–14 letters, numbers or _</div>`;const i=$('#ivName');if(i)setTimeout(()=>i.focus(),50)}
+function introType(){if(!IN.on)return;const line=ivLine(IN.i),bt=$('#btxt'),gm=$('#ivgm');let k=0;const nb=$('#ivnm');if(nb&&!IN.wait)nb.innerHTML='';IN.ready=true;IN.typing=true;bt.className='t';ivShow(IN.i);if(gm)gm.classList.add('talk');
+ const tick=()=>{if(!IN.typing)return;k++;bt.textContent=line.slice(0,k);if(k%3==0)beep(520+(k%7)*30,.03,'square',.012);if(k<line.length)IN.timer=setTimeout(tick,24);else{IN.typing=false;bt.className='';if(gm)gm.classList.remove('talk');if((IN.lines||[])[IN.i]===IV_NAME&&!(NET.au&&NET.au.name))ivNameUI()}};tick()}
+function introNext(){if(!IN.on||IN.ending)return;if(!IN.began){introBegin();return}if(!IN.ready||IN.wait)return;
+ if(IN.typing){IN.typing=false;clearTimeout(IN.timer);const bt=$('#btxt'),gm=$('#ivgm');bt.textContent=ivLine(IN.i);bt.className='';if(gm)gm.classList.remove('talk');if(IN.lines[IN.i]===IV_NAME&&!(NET.au&&NET.au.name))ivNameUI();return}
+ IN.i++;if(IN.i>=IN.lines.length)return introEnd();introType()}
+function introEnd(){if(!IN.on||IN.ending)return;if(IN.naming&&!(NET.au&&NET.au.name))return;IN.ending=true;IN.typing=false;clearTimeout(IN.timer);const el=$('#intro');el.classList.add('out');
  setTimeout(()=>{el.className='';el.innerHTML='';const replay=IN.replay;IN={on:false,i:0,typing:false,ready:false,ending:false,timer:0,replay:false,began:false};if(!replay){S.introDone=true;save()}render()},700)}
 
 
@@ -2322,12 +2340,12 @@ function weeklyView(){const W=wkEnsure();if(W&&W.seen!==W.week){W.seen=W.week;sa
  <div class="panel"><h3>Your record</h3><div class="odds">Best run: ${W.bestR}/${WK_ROUNDS} rounds · best score ${W.best} · 👑 ${W.titles} weekly title${W.titles==1?'':'s'}</div>${W.hist.slice(-5).reverse().map(h=>`<div class="odds">Week ${h.week}: ${h.rounds}/${WK_ROUNDS} · score ${h.score}</div>`).join('')}</div>`}
 function statsView(){const MODES={s:'Season & playoffs',ex:'Exhibition',rk:'Ranked',dc:'Daily',wk:'Weekly'},mst=S.mst||{};let TW=0,TL=0;
  const mrows=Object.keys(MODES).map(k=>{const[w,l]=mst[k]||[0,0];TW+=w;TL+=l;return`<div class="syn"><span>${MODES[k]}</span><b>${w}-${l} <small>${w+l?Math.round(w/(w+l)*100)+'%':'—'}</small></b></div>`}).join('');
- const rows=Object.keys(S.car).filter(k=>PLAYERS[k]).map(k=>[+k,S.car[k]]),lead=(key,lab)=>{const t=rows.slice().sort((a,b)=>b[1][key]-a[1][key]).filter(r=>r[1][key]>0).slice(0,5);return`<div class="panel"><h3>${lab}</h3>${t.map((r,i)=>`<div class="syn"><span>${i+1}. ${PLAYERS[r[0]].name}</span><b>${r[1][key].toLocaleString()}</b></div>`).join('')||'<div class="odds">No games yet.</div>'}</div>`};
+ const rows=Object.keys(S.car).filter(k=>PLAYERS[k]).map(k=>[+k,S.car[k]]),lead=(key,lab)=>{const t=rows.slice().sort((a,b)=>(b[1][key]||0)-(a[1][key]||0)).filter(r=>r[1][key]>0).slice(0,5);return`<div class="panel"><h3>${lab}</h3>${t.map((r,i)=>`<div class="syn"><span>${i+1}. ${PLAYERS[r[0]].name}</span><b>${r[1][key].toLocaleString()}</b></div>`).join('')||'<div class="odds">No games yet.</div>'}</div>`};
  const hist=S.hist.slice().sort((a,b)=>(b.champ-a.champ)||b.w-a.w).slice(0,5),champs=S.hist.filter(h=>h.champ);
  const tot=r=>PUBP.filter(p=>p.rar==r).length;
  return`${pageHead('Stats & History','Career numbers')}<div class="panel"><h3>Win rate by mode <small class="odds">· ${TW}-${TL}${TW+TL?' · '+Math.round(TW/(TW+TL)*100)+'%':''}</small></h3>${mrows}${S.big?`<div class="odds" style="margin-top:6px">💥 Biggest win: ${S.big.sa}-${S.big.sb} over ${S.big.opp} (+${S.big.m})</div>`:''}</div>
  <div class="row" style="margin-bottom:10px"><button class="btn s" data-a="tab" data-v="compare">⚖️ Compare cards</button><button class="btn s" data-a="tab" data-v="trophy">🏆 Trophy room</button></div>
- <div class="grid2">${lead('pts','Career points')}${lead('reb','Career rebounds')}${lead('ast','Career assists')}${lead('stl','Career steals')}</div>
+ <div class="grid2">${lead('pts','Career points')}${lead('reb','Career rebounds')}${lead('ast','Career assists')}${lead('stl','Career steals')}${lead('blk','Career blocks')}${lead('gp','Games played')}</div>
  <div class="panel"><h3>🏆 Titles <small class="odds">${champs.length}</small></h3><div class="chips">${champs.map(h=>`<span class="chip on" style="cursor:default">S${h.n} · ${h.w}-${h.l}</span>`).join('')||'<span class="odds">No titles yet.</span>'}</div></div>
  <div class="panel"><h3>Best seasons</h3>${hist.map(h=>`<div class="syn"><span>${h.champ?'🏆':'•'} Season ${h.n} · ${h.w}-${h.l} · ${h.r||''}</span><b>${h.mvp&&h.mvp!='—'?'MVP '+h.mvp:''}</b></div>`).join('')||'<div class="odds">Finish a season to see it here.</div>'}</div>
  <div class="panel"><h3>Rarity breakdown</h3>${RAR.map((r,i)=>{const o=ownN(p=>p.rar==i);return`<div class="syn" style="display:block"><div style="display:flex;justify-content:space-between"><span style="color:var(--c${i})">${r}</span><b>${o}/${tot(i)}</b></div>${pctBar(o,tot(i))}</div>`}).join('')}</div>
@@ -2876,7 +2894,9 @@ const ACT={
   if(S.owned[f.id]!=null){toast('You already own him!');render();return}const p=PLAYERS[f.id],pr=FEAT_PRICE[p.rar],cost=v=='gems'?pr.g:pr.c;
   if(S[v]<cost){toast(`Not enough ${v}! Need ${cost.toLocaleString()}.`);return}
   S[v]-=cost;S.owned[f.id]=0;if(S.lineup[p.pos]==null)S.lineup[p.pos]=f.id;f.bought=true;LASTBUY=null;ev('feat');save();renderTop();render();showMulti([[{id:f.id,note:'NEW!',coins:0}]])},
- replayintro:()=>startIntro(true),intronext:()=>introNext(),introskip:()=>introEnd(),
+ replayintro:()=>startIntro(true),intronext:()=>introNext(),introskip:()=>{if(IN.naming&&!(NET.au&&NET.au.name)){const k=IN.lines.indexOf(IV_NAME);if(!IN.began)introBegin();if(IN.i!==k||!IN.ready){IN.typing=false;clearTimeout(IN.timer);IN.i=k;introType()}else if(IN.typing)introNext();return}introEnd()},
+ ivclaim:()=>{const i=$('#ivName'),er=$('#ivNameErr'),btn=document.querySelector('[data-a=ivclaim]');if(!i||NET.busy)return;NET.busy=true;if(btn)btn.disabled=true;if(er){er.textContent='Checking…';er.className='ivname-err'}
+  netClaimName(i.value).then(n=>{NET.busy=false;IN.wait=false;const b=$('#ivnm');if(b)b.innerHTML='';IN.i++;introType();toast('👋 Welcome to the league, '+n+'!')},e=>{NET.busy=false;if(btn)btn.disabled=false;if(er){er.textContent=e&&e.text?e.text:netErrText(e);er.className='ivname-err bad'}if(i)i.focus()})},
  admfeat:()=>{if(!admOn('on'))return;ensureFeat(true);render();toast('⭐ Featured player refreshed')},
  admfame:()=>{if(!admOn('on'))return;S.rk.fame+=300;const af=[];rkPromote(af);save();render();toast('🏅 +300 fame '+af.join(' '))},
  again:()=>{if(!LASTBUY)return;const b=LASTBUY;closeModal();b.id=='event'?buyEvent(b.cur,b.q):buyPack(b.id,b.cur)},
@@ -3106,10 +3126,10 @@ const NET_RULES=`{
 }`;
 const nx=s=>String(s==null?'':s).replace(/[^A-Za-z0-9_ .'!-]/g,'').slice(0,16);          // anything another player wrote is cleaned before it is shown
 const netNameOk=n=>/^[a-z0-9_]{3,14}$/.test(n),netIdOk=s=>typeof s=='string'&&/^[A-Za-z0-9_-]{1,64}$/.test(s);
-const netOn=()=>!!(NET.cfg&&NET.au&&NET.au.uid);
+const netOn=()=>!!(NET.cfg&&NET.au&&NET.au.uid&&NET.au.name);
 function mp(){const m=S.mp&&typeof S.mp=='object'?S.mp:(S.mp={});const ob=k=>{if(!m[k]||typeof m[k]!='object'||Array.isArray(m[k]))m[k]={}};['fr','h2h','esc','proc','def'].forEach(ob);if(!Array.isArray(m.feed))m.feed=[];if(!Array.isArray(m.hist))m.hist=[];m.unseen=m.unseen|0;return m}
 function netLoadLocal(){let o={};try{o=JSON.parse(localStorage.getItem(NETKEY)||'{}')||{}}catch(e){}
- NET.cfg=NETCFG.apiKey&&NETCFG.dbUrl?netCfgClean(NETCFG):(o.cfg?netCfgClean(o.cfg):null);NET.last=netNameOk(o.last||'')?o.last:'';NET.lastId=typeof o.lastId=='string'?o.lastId.slice(0,120):'';NET.gm=NET.last||NET.lastId?'in':'up';NET.au=o.au&&o.au.rt&&netIdOk(o.au.uid)&&netNameOk(o.au.name||'')?{uid:o.au.uid,rt:o.au.rt,name:o.au.name,id:'',exp:0}:null}
+ NET.cfg=NETCFG.apiKey&&NETCFG.dbUrl?netCfgClean(NETCFG):(o.cfg?netCfgClean(o.cfg):null);NET.last=netNameOk(o.last||'')?o.last:'';NET.lastId=typeof o.lastId=='string'?o.lastId.slice(0,120):'';NET.gm=NET.last||NET.lastId?'in':'up';NET.au=o.au&&o.au.rt&&netIdOk(o.au.uid)&&(o.au.name===''||netNameOk(o.au.name||''))?{uid:o.au.uid,rt:o.au.rt,name:o.au.name,id:'',exp:0}:null}
 function netSaveLocal(){try{localStorage.setItem(NETKEY,JSON.stringify({cfg:NETCFG.apiKey?null:NET.cfg,au:NET.au?{uid:NET.au.uid,rt:NET.au.rt,name:NET.au.name}:null,last:NET.au?NET.au.name:(NET.last||''),lastId:String(NET.lastId||'').slice(0,120)}))}catch(e){}}
 function netCfgClean(c){if(!c)return null;const k=String(c.apiKey||'').trim(),u=String(c.dbUrl||'').trim().replace(/\/+$/,'');if(!/^[A-Za-z0-9_-]{20,80}$/.test(k)||!/^https:\/\/[a-z0-9.-]+\.(firebaseio\.com|firebasedatabase\.app)$/i.test(u))return null;return{apiKey:k,dbUrl:u}}
 const netSetupCode=()=>NET.cfg?'HDNET-'+btoa(JSON.stringify({k:NET.cfg.apiKey,u:NET.cfg.dbUrl})):'';
@@ -3147,27 +3167,25 @@ const netPost=(u,b)=>netHttp(netIdt(u),{method:'POST',headers:{'Content-Type':'a
 const netEmailOk=e=>/^[^\s@]{1,64}@[^\s@]{1,190}\.[a-z]{2,24}$/i.test(String(e||''))&&!String(e).toLowerCase().endsWith(NET_DOM);
 async function netFindName(uid){try{const n=await netDb('GET','users/'+uid+'/n');if(typeof n=='string'&&netNameOk(n)&&(await netDb('GET','names/'+n))===uid)return n}catch(e){}
  try{const all=await netDb('GET','names')||{};const k=Object.keys(all).find(k=>all[k]===uid&&netNameOk(k));if(k)return k}catch(e){}return''}
-async function netAuth(mode,ident,pw,email){pw=String(pw||'');if(pw.length<6)throw{code:'x',message:'WEAK_PASSWORD'};const exp=j=>Date.now()+(+j.expiresIn||3600)*1000;let j;
- if(mode=='up'){const uname=String(ident||'').trim().toLowerCase();email=String(email||'').trim().toLowerCase();
-  if(!netEmailOk(email))throw{text:'Enter a real email address. It is the only way to reset your password.'};
-  if(!netNameOk(uname))throw{text:'Usernames are 3–14 characters: letters, numbers or _ only.'};
-  j=await netPost('signUp',{email,password:pw,returnSecureToken:true});if(!netIdOk(j.localId))throw{code:'x',message:'bad response'};
-  NET.au={uid:j.localId,id:j.idToken,rt:j.refreshToken,exp:exp(j),name:uname};
-  const undo=async()=>{await netPost('delete',{idToken:j.idToken}).catch(()=>{});NET.au=null};
-  let owner=null;try{owner=await netDb('GET','names/'+uname)}catch(e){await undo();throw e}
-  if(owner&&owner!==j.localId){await undo();throw{text:'That username is taken. Pick another.'}}
-  try{await netDb('PUT','names/'+uname,j.localId)}catch(e){await undo();throw e}
-  netPost('sendOobCode',{requestType:'VERIFY_EMAIL',idToken:j.idToken}).catch(()=>{});NET.lastId=email}
- else{const id=String(ident||'').trim().toLowerCase(),isEm=id.includes('@');
-  if(!isEm&&!netNameOk(id))throw{text:'Enter your email (or the username of an account made before emails were added).'};
-  try{j=await netPost('signInWithPassword',{email:isEm?id:id+NET_DOM,password:pw,returnSecureToken:true})}
-  catch(e){if(/INVALID_LOGIN_CREDENTIALS|EMAIL_NOT_FOUND|INVALID_PASSWORD|INVALID_EMAIL/.test(String(e.message||'')))throw{text:isEm?'Wrong email or password.':'Wrong username or password. If you added an email to your account, sign in with that email instead.'};throw e}
+async function netAuth(mode,ident,pw){pw=String(pw||'');const exp=j=>Date.now()+(+j.expiresIn||3600)*1000;let j;const id=String(ident||'').trim().toLowerCase();
+ if(mode=='up'){if(!netEmailOk(id))throw{text:'Enter a real email address. It is the only way to reset your password.'};if(pw.length<6)throw{code:'x',message:'WEAK_PASSWORD'};
+  j=await netPost('signUp',{email:id,password:pw,returnSecureToken:true});if(!netIdOk(j.localId))throw{code:'x',message:'bad response'};
+  NET.au={uid:j.localId,id:j.idToken,rt:j.refreshToken,exp:exp(j),name:''};netPost('sendOobCode',{requestType:'VERIFY_EMAIL',idToken:j.idToken}).catch(()=>{});NET.lastId=id}
+ else{const isEm=id.includes('@');if(!id)throw{text:'Enter the email on your account.'};if(pw.length<6)throw{text:isEm?'Wrong email or password.':'Enter the email on your account.'};
+  if(!isEm&&!netNameOk(id))throw{text:'Enter the email on your account.'};
+  try{j=await netPost('signInWithPassword',{email:isEm?id:id+NET_DOM,password:pw,returnSecureToken:true})}      // accounts made before emails existed still sign in with their old username
+  catch(e){if(/INVALID_LOGIN_CREDENTIALS|EMAIL_NOT_FOUND|INVALID_PASSWORD|INVALID_EMAIL/.test(String(e.message||'')))throw{text:isEm?'Wrong email or password.':'Enter the email on your account.'};throw e}
   if(!netIdOk(j.localId))throw{code:'x',message:'bad response'};
   NET.au={uid:j.localId,id:j.idToken,rt:j.refreshToken,exp:exp(j),name:isEm?'':id};
-  if(isEm){const n=await netFindName(j.localId);if(!n){NET.au=null;throw{text:'This account never finished setting up its username. Create a new account instead.'}}NET.au.name=n}
+  if(isEm)NET.au.name=await netFindName(j.localId);                           // may be '' if the account never picked a username: Buckets asks for one
   else{try{if(!(await netDb('GET','names/'+id)))await netDb('PUT','names/'+id,j.localId)}catch(e){}}
-  NET.lastId=id}
- netSaveLocal();NET.err='';NET.msg='';try{await netAdopt()}catch(e){netSignOutLocal();throw e}admSync();await netAfterLogin(true)}
+  NET.lastId=isEm?id:''}
+ netSaveLocal();NET.err='';NET.msg='';try{await netAdopt()}catch(e){netSignOutLocal();throw e}admSync();if(NET.au.name)await netAfterLogin(true)}
+// The username is chosen in the intro, with Buckets.
+async function netClaimName(n){n=String(n||'').trim().toLowerCase();if(!NET.au||!NET.au.uid)throw{text:'Please sign in again.'};
+ if(!netNameOk(n))throw{text:'Use 3–14 letters, numbers or _ (no spaces).'};
+ const owner=await netDb('GET','names/'+n);if(owner&&owner!==NET.au.uid)throw{text:'"'+n+'" is taken. Try another.'};
+ if(!owner)await netDb('PUT','names/'+n,NET.au.uid);NET.au.name=n;netSaveLocal();admSync();netAfterLogin(true).then(()=>{renderTop()},()=>{});return n}
 async function netForgot(email){email=String(email||'').trim().toLowerCase();if(!netEmailOk(email))throw{text:'Enter the email address on your account.'};
  try{await netPost('sendOobCode',{requestType:'PASSWORD_RESET',email})}catch(e){if(!/EMAIL_NOT_FOUND/.test(String(e.message||'')))throw e}
  return'📧 If an account uses '+email+', a reset link is on its way. Check your spam folder too.'}
@@ -3195,7 +3213,7 @@ async function netAfterLogin(skipAdopt){let ch=false;if(!skipAdopt){try{ch=await
 /* ---- public profile ---- */
 function netFlag(){if(S.adm&&S.adm.on)S.adm.used=1;return!!((S.adm&&(S.adm.on||S.adm.used))||PLAYERS.some(p=>p.custom&&S.owned[p.id]!=null))}
 const netCardsStr=()=>Object.keys(S.owned).map(Number).filter(id=>PLAYERS[id]&&!PLAYERS[id].custom).sort((a,b)=>a-b).join(',');
-async function netPublish(force){if(!netOn()||!S.drafted)return;const code=shCode()||'',t=teamInfo(),r=S.rk,p={n:NET.au.name,c:code,o:Math.round(t.ovr||0),f:r.fame|0,tr:r.tier|0,w:r.w|0,l:r.l|0,fl:netFlag()?1:0,v:NET_VER,t:Date.now(),...netMyPub()},sig=[p.c,p.f,p.tr,p.w,p.l,p.fl,p.a,p.img.length,p.b,p.col,p.tm,p.ti,p.sc,p.lv,p.cc,p.ch].join('|');
+async function netPublish(force){if(!netOn()||!S.drafted)return;const code=shCode()||'',t=teamInfo(),r=S.rk,p={gh:admAllowed()?1:0,n:NET.au.name,c:code,o:Math.round(t.ovr||0),f:r.fame|0,tr:r.tier|0,w:r.w|0,l:r.l|0,fl:netFlag()?1:0,v:NET_VER,t:Date.now(),...netMyPub()},sig=[p.c,p.f,p.tr,p.w,p.l,p.fl,p.a,p.img.length,p.b,p.col,p.tm,p.ti,p.sc,p.lv,p.cc,p.ch].join('|');
  if(!force&&(sig==NET.pubSig||Date.now()-NET.pubAt<15000))return;const oldSig=NET.pubSig;NET.pubSig=sig;NET.pubAt=Date.now();
  try{await netDb('PUT','users/'+NET.au.uid,p);const cs=netCardsStr();if(cs!=NET.cardSig){await netDb('PUT','cards/'+NET.au.uid,cs||'-');NET.cardSig=cs}}catch(e){NET.pubSig=oldSig;throw e}}
 async function netPool(force){if(!netOn())return;if(!force&&Date.now()-NET.poolAt<60000)return;NET.poolAt=Date.now();const j=await netDb('GET','users');const out=[];
@@ -3205,15 +3223,15 @@ const netUser=uid=>NET.pool.find(u=>u.uid==uid)||null;
 /* ---- opponents built from a real player's published team ---- */
 function netOppFrom(net,k){if(!net||!netIdOk(net.uid))return null;const r=shDecode(net.c);if(!r.ok)return null;const o=ghostOpp(r.g);o.ghost=null;o.gm=nx(net.n)||'player';o.online={uid:net.uid,n:o.gm,k};return o}
 function netPickRanked(){if(!netOn())return null;netPool().catch(()=>{});const me=NET.au.uid,r=S.rk,hist=mp().hist;
- const ok=NET.pool.filter(u=>u.uid!=me&&u.v==NET_VER&&u.c&&!hist.includes(u.uid)&&shDecode(u.c).ok);if(!ok.length)return null;
+ const ok=NET.pool.filter(u=>u.uid!=me&&!u.gh&&u.v==NET_VER&&u.c&&!hist.includes(u.uid)&&shDecode(u.c).ok);if(!ok.length)return null;
  let c=ok.filter(u=>Math.abs(u.tr-r.tier)<=1);if(!c.length)c=ok.filter(u=>Math.abs(u.f-r.fame)<=450);if(!c.length)return null;
  c.sort((a,b)=>Math.abs(a.f-r.fame)-Math.abs(b.f-r.fame));return c[ri(0,Math.min(c.length,4)-1)]}
 function netRankedPush(uidOrBot){const h=mp().hist;h.push(uidOrBot);while(h.length>2)h.shift()}
 // After any game against a real player's team: tell them, and keep the local records.
 function netGameDone(opp,res,win,after){const on=opp.online,m=mp();if(!on||!netOn())return;netGameLog(on.k=='f'?'f':'rk',on.n,on.uid,res,win);const id='m'+Date.now().toString(36)+ri(1000,9999);
- netDb('PUT','box/'+on.uid+'/mt/'+id,{from:NET.au.uid,fn:NET.au.name,sa:res.sa|0,sb:res.sb|0,w:win?1:0,k:on.k,t:Date.now()}).catch(()=>{});
+ if(!(on.k=='r'&&admAllowed()))netDb('PUT','box/'+on.uid+'/mt/'+id,{from:NET.au.uid,fn:NET.au.name,sa:res.sa|0,sb:res.sb|0,w:win?1:0,k:on.k,t:Date.now()}).catch(()=>{});
  if(on.k=='f'){const h=m.h2h[on.uid]=m.h2h[on.uid]||{w:0,l:0};win?h.w++:h.l++;after.push('⚔️ 1v1 vs '+on.n+': your record is now '+h.w+'-'+h.l)}
- else after.push('🌐 Real player: '+on.n+' will see this result');
+ else after.push(admAllowed()?'👻 Ghost game: '+on.n+'\'s fame is untouched':'🌐 Real player: '+on.n+' will see this result');
  setTimeout(()=>netPublish(true).catch(()=>{}),400)}
 function netFeed(x){const m=mp();m.feed.unshift({t:Date.now(),x:String(x).slice(0,200)});m.feed=m.feed.slice(0,30);m.unseen=Math.min(99,m.unseen+1)}
 function netApplyMatch(mt){if(!mt||!netIdOk(mt.from))return;const m=mp();prof();if(m.blk[mt.from])return;
@@ -3322,7 +3340,7 @@ function netFriendsTab(){const m=mp(),req=NET.box.req,ids=Object.keys(m.fr).sort
  return`<div class="panel"><h3>Find a player</h3><div class="row"><input class="inp" id="netFriend" placeholder="Exact username" maxlength="14" autocapitalize="off" autocomplete="off" style="${NIB}"><button class="btn" data-a="netadd">➕ Add friend</button><button class="btn s" data-a="netfind">👁 View profile</button></div><div class="odds" style="margin-top:6px">Your username is <b>${NET.au.name}</b> — tell your friends to add it.</div></div>
  ${Object.keys(req).length?`<div class="panel"><h3>Friend requests</h3>${Object.keys(req).map(u=>`<div class="opp"><div style="display:flex;gap:10px;align-items:center"><span data-a="netprof" data-v="${u}" style="cursor:pointer">${netAvatar(netUser(u)||{},38)}</span><div><b data-a="netprof" data-v="${u}" style="cursor:pointer">${nx(req[u].n)}</b> wants to be friends</div></div><div class="row" style="gap:6px"><button class="btn" data-a="netreq" data-v="y:${u}">Accept</button><button class="btn s" data-a="netreq" data-v="n:${u}">Decline</button></div></div>`).join('')}</div>`:''}
  <div class="panel"><h3>Friends (${ids.filter(u=>m.fr[u].ok).length})</h3>${ids.map(row).join('')||'<div class="odds">No friends yet. Add one by username above.</div>'}</div>`}
-function netRankTab(){const me=NET.au.uid,L=NET.pool.filter(u=>u.c).sort((a,b)=>b.f-a.f).slice(0,50);
+function netRankTab(){const me=NET.au.uid,L=NET.pool.filter(u=>u.c&&!u.gh).sort((a,b)=>b.f-a.f).slice(0,50);
  return`<div class="panel"><h3>🏅 Ranked vs real players</h3><div class="odds" style="margin-bottom:10px">Ranked matches you with another player's real team near your rank whenever one is available, and with a bot when not. They don't need to be online: you play the team they last saved. When someone plays your team you gain fame for a defensive win and lose a little for a loss.</div>
  <div class="row"><button class="btn" data-a="tab" data-v="ranked">▶ Go to Ranked</button><button class="btn s" data-a="netrefresh">🔄 Refresh</button></div></div>
  <div class="panel"><h3>Leaderboard <small class="odds">· ${L.length} player${L.length==1?'':'s'}</small></h3>${L.map((u,i)=>`<div class="step ${u.uid==me?'cur':''}" data-a="netprof" data-v="${u.uid}" style="cursor:pointer;align-items:center"><span style="display:flex;gap:8px;align-items:center;min-width:0"><b style="width:30px">#${i+1}</b>${netAvatar(u,30)}<span style="min-width:0"><b>${nesc(u.n)}</b>${netDot(u.t)}${u.uid==me?' (you)':''}<br><span class="odds" style="font-size:11px">${nesc(ntTitle(u.ti))}</span></span></span><span class="odds">${RK[u.tr].e} ${u.f} fame · ${u.w}-${u.l} · OVR ${u.o}</span></div>`).join('')||'<div class="odds">Nobody is on the board yet. Play a Ranked game to appear here.</div>'}</div>`}
@@ -3386,10 +3404,11 @@ function netAvatar(u,sz){sz=sz||40;const col=NCOL[Math.max(0,Math.min(NCOL.lengt
  return`<span class="nav-av" style="${box}">${inner}</span>`}
 const netSeen=t=>Date.now()-(+t||0)<4*60000;
 const netDot=t=>netSeen(t)?'<span title="Online now" style="display:inline-block;width:9px;height:9px;border-radius:50%;background:#4cff9a;box-shadow:0 0 8px #4cff9a;margin-left:6px;vertical-align:1px"></span>':'';
-function netMyPub(){const p=prof();return{a:p.a,img:p.a=='u'?p.img:'',b:ntext(p.b,150),col:p.col,tm:p.tm,ti:NTITLES.some(x=>x.id==p.ti&&x.ok())?p.ti:'rook',sc:p.sc.join(','),lv:gmLvl(),cc:Object.keys(S.owned).length,ch:S.st.titles|0}}
+function netMyPub(){const p=prof();return{a:p.a,img:p.a=='u'?p.img:'',b:ntext(p.b,150),col:p.col,tm:p.tm,ti:NTITLES.some(x=>x.id==p.ti&&x.ok())?p.ti:'rook',sc:netPackCards(p.sc),lv:gmLvl(),cc:Object.keys(S.owned).length,ch:S.st.titles|0}}
+function netParseSc(v){v=String(v||'').trim();if(!v)return[];if(v.includes(':'))return netUnpackCards(v);return v.split(',').filter(x=>/^\d{1,4}$/.test(x)).map(Number).filter(i=>PLAYERS[i]&&!PLAYERS[i].custom).slice(0,3).map(id=>({id,tr:[0,0,0,0,0,0],pr:0}))}
 function netParseUser(uid,u){return{uid,n:nx(u.n)||'player',c:typeof u.c=='string'?u.c.slice(0,200):'',o:Math.max(0,Math.min(200,u.o|0)),f:Math.max(0,Math.min(99999,u.f|0)),tr:Math.max(0,Math.min(RK.length-1,u.tr|0)),w:Math.max(0,u.w|0),l:Math.max(0,u.l|0),fl:u.fl?1:0,v:u.v|0,t:+u.t||0,
  a:typeof u.a=='string'&&/^(e\d{1,2}|m|u|p\d{1,4})$/.test(u.a)?u.a:'e0',img:typeof u.img=='string'&&NIMG.test(u.img)?u.img:'',b:ntext(u.b,150),col:Math.max(0,Math.min(NCOL.length-1,u.col|0)),tm:Number.isInteger(u.tm)&&u.tm>=0&&u.tm<30?u.tm:-1,ti:typeof u.ti=='string'&&NTITLES.some(x=>x.id==u.ti)?u.ti:'rook',
- sc:String(u.sc||'').split(',').map(Number).filter(i=>Number.isInteger(i)&&PLAYERS[i]&&!PLAYERS[i].custom).slice(0,3),lv:Math.max(1,Math.min(99,u.lv|0)),cc:Math.max(0,Math.min(9999,u.cc|0)),ch:Math.max(0,Math.min(9999,u.ch|0))}}
+ sc:netParseSc(u.sc),gh:u.gh?1:0,lv:Math.max(1,Math.min(99,u.lv|0)),cc:Math.max(0,Math.min(9999,u.cc|0)),ch:Math.max(0,Math.min(9999,u.ch|0))}}
 /* ---- per-account saves: each account has its own game; the cloud copy follows you between devices ---- */
 function netLoadCloudSave(cloud){const r=parseSave(cloud.s);if(r.err)throw{text:r.err};S=r.s;const m=mp();m.owner=NET.au.uid;m.bkT=+cloud.t||Date.now();D=null;G=null;MU=null;tab='home';save();NET.dirty=false;return true}
 async function netAdopt(){const uid=NET.au.uid,m=mp();let cloud;
@@ -3402,6 +3421,7 @@ async function netAdopt(){const uid=NET.au.uid,m=mp();let cloud;
  try{localStorage.removeItem(KEY)}catch(e){}S=fresh();mp().owner=uid;D=null;G=null;MU=null;tab='home';save();NET.msg2='🎉 Welcome to Hoop Dynasty, '+NET.au.name+'!';return true}
 /* ---- the gate: no account, no game ---- */
 const netGate=()=>!!(NET.cfg&&!NET.au)||!NET.cfg;
+const netNeedName=()=>!!(NET.cfg&&NET.au&&NET.au.uid&&!NET.au.name);
 function gateView(){const sv=GMSVG2,gm=NET.gm=='up'||NET.gm=='forgot'?NET.gm:'in';
  if(!NET.cfg)return`<div class="gate">${netSetupView()}</div>`;
  const msg=NET.msg?`<div class="gate-msg">${nesc(NET.msg)}</div>`:'';
@@ -3409,25 +3429,25 @@ function gateView(){const sv=GMSVG2,gm=NET.gm=='up'||NET.gm=='forgot'?NET.gm:'in
   <label class="odds" for="netFgEmail">Email</label><input class="inp" id="netFgEmail" type="email" autocomplete="email" autocapitalize="off" spellcheck="false" placeholder="you@example.com" value="${nesc(NET.lastId&&NET.lastId.includes('@')?NET.lastId:'')}" style="width:100%;margin:4px 0 14px">
   <button class="btn" style="width:100%" data-a="netforgot"${NET.busy?' disabled':''}>${NET.busy?'One moment…':'Send reset link'}</button>
   <div class="odds" style="text-align:center;margin-top:12px"><a href="#" data-a="netgm" data-v="in">← Back to sign in</a></div>
-  <div class="odds" style="margin-top:12px;font-size:11.5px">Older accounts made with only a username can't be reset. Sign in and add an email from your profile to protect yours.</div>`
+  <div class="odds" style="margin-top:12px;font-size:11.5px">Accounts made before emails were added can't be reset until an email is added from their profile.</div>`
  :gm=='up'?`<h3>Create your account</h3>${msg}
   <label class="odds" for="netEmail">Email</label><input class="inp" id="netEmail" type="email" autocomplete="email" autocapitalize="off" spellcheck="false" placeholder="you@example.com" style="width:100%;margin:4px 0 10px">
-  <label class="odds" for="netName">Username <span style="opacity:.7">· what other players see</span></label><input class="inp" id="netName" maxlength="14" autocomplete="username" autocapitalize="off" spellcheck="false" placeholder="3–14 letters, numbers or _" style="width:100%;margin:4px 0 10px">
   <label class="odds" for="netPw">Password</label>${pwField('netPw','new-password','6+ characters',' style="margin:4px 0 14px"')}
   <button class="btn" style="width:100%" data-a="netauth" data-v="up"${NET.busy?' disabled':''}>${NET.busy?'One moment…':'Create account & play'}</button>
   <div class="odds" style="text-align:center;margin-top:12px">Already have an account? <a href="#" data-a="netgm" data-v="in">Sign in</a></div>
-  <div class="odds" style="margin-top:12px;font-size:11.5px">Your email is private: other players only see your username. We use it to verify your account and reset your password. 🎁 Verify it for ${NET_EMAIL_BONUS.toLocaleString()} free coins.</div>`
+  <div class="odds" style="margin-top:12px;font-size:11.5px">You'll pick your username with Buckets next. Your email stays private: other players only see your username. We use it to verify your account and reset your password. 🎁 Verify it for ${NET_EMAIL_BONUS.toLocaleString()} free coins.</div>`
  :`<h3>Sign in to play</h3>${msg}
-  <label class="odds" for="netName">Email or username</label><input class="inp" id="netName" maxlength="120" autocomplete="username" autocapitalize="off" spellcheck="false" placeholder="you@example.com" value="${nesc(NET.lastId||NET.last||'')}" style="width:100%;margin:4px 0 10px">
+  <label class="odds" for="netName">Email</label><input class="inp" id="netName" type="email" maxlength="120" autocomplete="email" autocapitalize="off" spellcheck="false" placeholder="you@example.com" value="${nesc(NET.lastId||'')}" style="width:100%;margin:4px 0 10px">
   <div style="display:flex;justify-content:space-between;align-items:baseline"><label class="odds" for="netPw">Password</label><a href="#" class="odds" data-a="netgm" data-v="forgot" style="font-size:12px">Forgot password?</a></div>${pwField('netPw','current-password','Your password',' style="margin:4px 0 14px"')}
   <button class="btn" style="width:100%" data-a="netauth" data-v="in"${NET.busy?' disabled':''}>${NET.busy?'One moment…':'Sign in'}</button>
   <div class="odds" style="text-align:center;margin-top:12px">New here? <a href="#" data-a="netgm" data-v="up">Create a free account</a></div>`;
  return`<div class="gate"><div class="gate-hero"><div class="gate-m">${sv}</div><div><div class="gate-t">HOOP<br><span>DYNASTY</span></div><div class="gate-s">The online basketball card game. Draft NBA legends, trade with friends, climb the Ranked ladder.</div></div></div>
  <div class="panel gate-box">${form}</div></div>`}
 const _render0=render;
-render=function(){if(netGate()){const keep={};['netEmail','netName','netPw','netFgEmail'].forEach(id=>{const e=document.getElementById(id);if(e&&e.value)keep[id]=e.value});renderTop();$('#nav').style.display='none';const m=$('#main');m.innerHTML=gateView();Object.keys(keep).forEach(id=>{const e=document.getElementById(id);if(e&&!(id=='netName'&&NET.keepName===false))e.value=keep[id]});return}_render0()};
+render=function(){if(netNeedName()){renderTop();$('#nav').style.display='none';$('#main').innerHTML='';if(!IN.on)startIntro(false,{name:true});return}
+ if(netGate()){const keep={};['netEmail','netName','netPw','netFgEmail'].forEach(id=>{const e=document.getElementById(id);if(e&&e.value)keep[id]=e.value});renderTop();$('#nav').style.display='none';const m=$('#main');m.innerHTML=gateView();Object.keys(keep).forEach(id=>{const e=document.getElementById(id);if(e&&!(id=='netName'&&NET.keepName===false))e.value=keep[id]});return}_render0()};
 const _renderTop0=renderTop;
-renderTop=function(){if(netGate()){$('#top').innerHTML=`<div class="logo"><span class="lgi">🏀</span> <i>HOOP DYNASTY</i></div>`;return}_renderTop0();
+renderTop=function(){if(netGate()||netNeedName()){$('#top').innerHTML=`<div class="logo"><span class="lgi">🏀</span> <i>HOOP DYNASTY</i></div>`;return}_renderTop0();
  const top=$('#top'),has=netOn()&&S.drafted;top.classList.toggle('has-me',has);
  if(has){const lg=$('#top .logo');if(lg&&!top.querySelector('.me-chip')){const T=RK[S.rk.tier],c=document.createElement('div');c.className='me-chip';c.dataset.a='meopen';c.dataset.v='me';c.title='Your profile';c.innerHTML=netAvatar(netMyPub(),34)+`<span><b>${nesc(NET.au.name)}</b><i>${T.e} ${T.n} · ${S.rk.fame}</i></span>`;lg.after(c)}}
  netNavSync()};
@@ -3451,7 +3471,7 @@ async function netSendChat(uid,txt){txt=ntext(txt,200);if(!txt)return'';const m=
 const netUnreadChats=()=>{const m=mp();return Object.keys(m.chu||{}).reduce((s,k)=>s+(m.chu[k]|0),0)};
 /* ---- profile viewer (anyone) ---- */
 /* ---- profile card shared by the profile page and the profile pop-up ---- */
-function netProfileHTML(u,ctx){const m=mp(),me=u.uid===(NET.au&&NET.au.uid),f=m.fr[u.uid],fr=f&&f.ok,T=RK[u.tr],h=m.h2h[u.uid],blk=!!(m.blk||{})[u.uid];
+function netProfileHTML(u,ctx){NET.scv={u,ctx};const m=mp(),me=u.uid===(NET.au&&NET.au.uid),f=m.fr[u.uid],fr=f&&f.ok,T=RK[u.tr],h=m.h2h[u.uid],blk=!!(m.blk||{})[u.uid];
  const btns=ctx=='page'?`<button class="btn" data-a="metab" data-v="edit">✏️ Edit profile</button><button class="btn s" data-a="metab" data-v="acct">⚙️ Account</button>`
   :`${me?`<button class="btn" data-a="netedit">✏️ Edit profile</button>`:fr?`<button class="btn" data-a="netcl1v1" data-v="${u.uid}">⚔️ 1v1</button><button class="btn s" data-a="netclchat" data-v="${u.uid}">💬 Message</button><button class="btn s" data-a="netcltrade" data-v="${u.uid}">🔁 Trade</button>`:f?`<span class="odds">Friend request sent</span>`:`<button class="btn" data-a="netpfadd" data-v="${nesc(u.n)}">➕ Add friend</button>`}
   ${me?'':`<button class="btn s" data-a="netblock" data-v="${u.uid}">${blk?'Unblock':'🚫 Block'}</button>`}<button class="btn s" data-a="close">Close</button>`;
@@ -3459,12 +3479,13 @@ function netProfileHTML(u,ctx){const m=mp(),me=u.uid===(NET.au&&NET.au.uid),f=m.
   ${u.b?`<div class="nprof-bio">${nesc(u.b)}</div>`:me&&ctx=='page'?`<div class="nprof-bio odds">No bio yet. Tap Edit profile to add one.</div>`:''}
   <div class="nprof-stats"><div><b>${T.e} ${T.n}</b><i>${u.f} fame</i></div><div><b>${u.w}-${u.l}</b><i>Ranked record</i></div><div><b>${u.o}</b><i>Team OVR</i></div><div><b>${u.lv}</b><i>GM level</i></div><div><b>${u.cc}</b><i>Cards</i></div><div><b>${u.ch}</b><i>Titles</i></div></div>
   ${u.tm>=0?`<div class="odds nprof-ln">❤️ Favorite team: <b>${NBA_TEAMS[u.tm]}</b></div>`:''}${h&&!me?`<div class="odds nprof-ln">⚔️ Your 1v1 record vs ${nesc(u.n)}: <b>${h.w}-${h.l}</b></div>`:''}
-  ${u.sc.length?`<div class="odds nprof-ln" style="margin-top:10px">Showcase</div><div class="nprof-sc">${u.sc.map(id=>`<div class="ivc" style="--s:.62;zoom:.62">${card(Pb(id))}</div>`).join('')}</div>`:me&&ctx=='page'?`<div class="odds nprof-ln">No showcase cards yet. Pick 3 in Edit profile.</div>`:''}
+  ${u.sc.length?`<div class="odds nprof-ln" style="margin-top:10px">Showcase</div><div class="nprof-sc">${u.sc.map((c,i)=>`<button class="nprof-card" data-a="netscview" data-v="${i}" aria-label="View ${nesc(PLAYERS[c.id].name)}"><div class="ivc" style="--s:.62;zoom:.62">${card(pBuild(PLAYERS[c.id],0,c.tr,c.pr))}</div></button>`).join('')}</div><div class="odds nprof-ln" style="font-size:11px">Tap a card to see its stats</div>`:me&&ctx=='page'?`<div class="odds nprof-ln">No showcase cards yet. Pick 3 in Edit profile.</div>`:''}
   <div class="row nprof-btns">${btns}</div></div>`}
 const netMeUser=()=>netParseUser(NET.au.uid,{...netMyPub(),n:NET.au.name,c:shCode()||'',o:teamInfo().ovr,f:S.rk.fame,tr:S.rk.tier,w:S.rk.w,l:S.rk.l,t:Date.now(),v:NET_VER});
 async function netOpenProfile(uid){if(!netIdOk(uid))return;if(uid===NET.au.uid){NET.meTab='view';ACT.tab('me');return}let u=netUser(uid);
  const fail=t=>modal('<h3>'+t+'</h3><div class="row" style="margin-top:12px"><button class="btn s" data-a="close">Close</button></div>');
- if(!u){modal('<div class="odds">Loading profile…</div>');try{const j=await netDb('GET','users/'+uid);if(!j)return fail('Player not found');u=netParseUser(uid,j)}catch(e){return fail('Could not load that profile. '+nesc(netErrText(e)))}}
+ if(u){modal(netProfileHTML(u,'pop'));const tok=NET.pvTok=Math.random();netDb('GET','users/'+uid).then(j=>{if(j&&NET.pvTok===tok&&document.querySelector('#ov .nprof')&&NET.scv&&NET.scv.u.uid===uid)modal(netProfileHTML(netParseUser(uid,j),'pop'))},()=>{});return}   // show the cached copy at once, then the latest
+ modal('<div class="odds">Loading profile…</div>');try{const j=await netDb('GET','users/'+uid);if(!j)return fail('Player not found');u=netParseUser(uid,j)}catch(e){return fail('Could not load that profile. '+nesc(netErrText(e)))}
  modal(netProfileHTML(u,'pop'))}
 /* ---- email / account panel ---- */
 function netEmailPanel(){const r=NET.em,m=mp(),b=NET_EMAIL_BONUS.toLocaleString();
@@ -3489,8 +3510,8 @@ function meView(){if(!netOn())return pageHead('Profile','')+'<div class="panel o
  <div class="chips" style="margin-bottom:12px">${T.map(t=>`<button class="chip ${t[0]==cur?'on':''}" data-a="metab" data-v="${t[0]}">${t[1]}${t[0]=='acct'&&em?' <b style="color:#ffd54a">🎁</b>':''}</button>`).join('')}</div>
  ${cur=='view'?`${em?`<div class="note" data-a="metab" data-v="acct" style="cursor:pointer">🎁 ${NET.em.real?'Verify':'Add'} your email to collect ${NET_EMAIL_BONUS.toLocaleString()} free coins</div>`:''}<div class="panel" style="padding:0;overflow:hidden">${netProfileHTML(netMeUser(),'page')}</div>${netFeedTab()}`:cur=='edit'?netProfileTab():netAccountTab()}`}
 /* ---- Home: the online hub ---- */
-function netHubHTML(){if(!netOn()||!S.drafted)return'';const m=mp(),me=netMeUser(),T=RK[S.rk.tier],fr=Object.keys(m.fr).filter(u=>m.fr[u].ok),on=fr.map(netUser).filter(u=>u&&netSeen(u.t)),reals=NET.pool.filter(u=>u.uid!=NET.au.uid&&netSeen(u.t)).length;
- const nReq=Object.keys(NET.box.req).length,nTr=Object.values(NET.box.tr).filter(t=>t.to==NET.au.uid&&t.st=='open').length,nCh=netUnreadChats(),L=NET.pool.filter(u=>u.c).sort((a,b)=>b.f-a.f),pos=L.findIndex(u=>u.uid==NET.au.uid);
+function netHubHTML(){if(!netOn()||!S.drafted)return'';const m=mp(),me=netMeUser(),T=RK[S.rk.tier],fr=Object.keys(m.fr).filter(u=>m.fr[u].ok),on=fr.map(netUser).filter(u=>u&&netSeen(u.t)),reals=NET.pool.filter(u=>u.uid!=NET.au.uid&&!u.gh&&netSeen(u.t)).length;
+ const nReq=Object.keys(NET.box.req).length,nTr=Object.values(NET.box.tr).filter(t=>t.to==NET.au.uid&&t.st=='open').length,nCh=netUnreadChats(),L=NET.pool.filter(u=>u.c&&!u.gh).sort((a,b)=>b.f-a.f),pos=L.findIndex(u=>u.uid==NET.au.uid);
  const tile=(ic,t,sub,a,v,n)=>`<button class="ohub-t" data-a="${a}" data-v="${v}"><b>${ic}</b><span>${t}</span><i>${sub}</i>${n?`<em>${n}</em>`:''}</button>`;
  return`<div class="ohub" style="--pc:${NCOL[me.col]}"><div class="ohub-top" data-a="meopen" data-v="me">${netAvatar(me,62)}<div style="min-width:0;flex:1"><div class="ohub-n">${nesc(NET.au.name)}</div><div class="ohub-ti">${nesc(ntTitle(me.ti))}</div><div class="odds">${T.e} ${T.n} · ${S.rk.fame} fame${pos>=0?` · #${pos+1} of ${L.length}`:''}</div></div><span class="ohub-go">Profile ›</span></div>
  <div class="ohub-grid">${tile('🏅','Ranked',reals?`${reals} player${reals>1?'s':''} online`:'vs real teams','tab','ranked',0)}${tile('👥','Friends',on.length?`${on.length} online`:`${fr.length} friend${fr.length==1?'':'s'}`,'socialtab','friends',nReq)}${tile('💬','Messages',nCh?`${nCh} unread`:'Chat with friends','socialtab','chat',nCh)}${tile('🔁','Trades',nTr?`${nTr} waiting`:'Swap cards','socialtab','trades',nTr)}</div>
@@ -3534,7 +3555,7 @@ Object.assign(ACT,{
  netcfg:()=>{const c=netCfgClean({apiKey:($('#netKey')||{}).value,dbUrl:($('#netUrl')||{}).value});if(!c){toast('Check both values: the key starts with AIza… and the URL starts with https:// and ends in firebaseio.com or firebasedatabase.app');return}NET.cfg=c;netSaveLocal();render();toast('✅ Saved — now create your account')},
  netunset:()=>askConfirm('Remove the online setup from this device?',()=>{NET.cfg=null;netSignOutLocal();render()}),
  netcopyrules:()=>netCopy(NET_RULES,'#netRules'),netcopycode:()=>netCopy(netSetupCode(),'#netShare'),
- netauth:v=>{const n=($('#netName')||{}).value,p=($('#netPw')||{}).value,em=($('#netEmail')||{}).value;NET.msg='';netRun(()=>netAuth(v,n,p,em).then(()=>{const t=NET.msg2||(v=='up'?'🎉 Account created — welcome!':'👋 Signed in');NET.msg2='';return t}))},
+ netauth:v=>{const n=(v=='up'?($('#netEmail')||{}):($('#netName')||{})).value,p=($('#netPw')||{}).value;NET.msg='';netRun(()=>netAuth(v,n,p).then(()=>{if(!NET.au||!NET.au.name)return'';const t=NET.msg2||(v=='up'?'🎉 Account created — welcome!':'👋 Signed in');NET.msg2='';return t}))},
  netout:()=>askConfirm('Sign out? Your game is saved to your account first.',()=>{closeModal();const go=()=>{netSignOutLocal();tab='home';render()};netBackup().then(go,go)}),
  netadd:()=>{const n=($('#netFriend')||{}).value;netRun(()=>netFriendAdd(n))},
  netreq:v=>{const yes=v[0]=='y',u=v.slice(2);netRun(()=>netFriendAnswer(u,yes).then(()=>netPool(true).catch(()=>{})),yes?'🤝 Friend added':'Request declined')},
@@ -3559,6 +3580,14 @@ Object.assign(ACT,{
  netprof:v=>{if(v)netOpenProfile(v)},
  netviewme:()=>{NET.meTab='view';ACT.tab('me')},
  metab:v=>{closeModal();NET.meTab=v;if(tab!='me')ACT.tab('me');else render();if(v=='acct')netEmailCheck().then(()=>{if(tab=='me')render()},()=>{})},
+ netscview:v=>{const z=NET.scv;if(!z||!z.u.sc[+v])return;const c=z.u.sc[+v],b=PLAYERS[c.id],p=pBuild(b,0,c.tr,c.pr),tt=c.tr.reduce((a,x)=>a+x,0);
+  modal(`<div class="scv"><div class="scv-card">${card(p)}</div><div class="scv-info"><h3 style="margin:0">${nesc(b.name)}</h3><div class="odds" style="color:var(--c${b.rar});font-weight:800">${RAR[b.rar]} · ${b.pos}${b.moment?' · '+nesc(b.moment):''}</div>
+  <div class="scv-ovr"><b>${p.ovr}</b><span>OVR${p.ovr>b.ovr?` <i>(base ${b.ovr})</i>`:''}</span></div>
+  ${STATS.map((k,i)=>`<div class="scv-st"><span>${['Shooting','3-point','Passing','Defense','Rebounding','Athleticism'][i]}</span><div class="scv-bar"><i style="width:${Math.min(100,p[k]/1.2)}%"></i></div><b>${p[k]}</b>${c.tr[i]?`<em>+${c.tr[i]}</em>`:''}</div>`).join('')}
+  <div class="odds" style="margin-top:8px">💪 Training: ${tt}/60 levels${c.pr?` · ⭐ Prestige ${'★'.repeat(c.pr)}`:''}</div>
+  ${p.trt&&p.trt.length?`<div class="scv-tr">${p.trt.map(t=>`<div><b>${TRAIT[t][0]} ${TRAIT[t][1]}</b><span>${TRAIT[t][2]}</span></div>`).join('')}</div>`:''}</div></div>
+  <div class="row" style="margin-top:12px;gap:8px">${z.ctx=='pop'?`<button class="btn s" data-a="netscback">← Back to profile</button>`:''}<button class="btn s" data-a="close">Close</button></div>`)},
+ netscback:()=>{const z=NET.scv;if(z)modal(netProfileHTML(z.u,'pop'))},
  meopen:()=>{NET.meTab='view';ACT.tab('me')},
  socialtab:v=>{NET.tab=v;NET.chatWith=null;NET.trd=null;ACT.tab('online')},
  netforgot:()=>{const e=($('#netFgEmail')||{}).value;netRun(()=>netForgot(e).then(t=>{NET.msg=t;NET.lastId=String(e||'').trim().toLowerCase();return''}))},
@@ -3583,9 +3612,9 @@ Object.assign(ACT,{
  netpw:()=>{const v=($('#netNewPw')||{}).value;netRun(()=>netChangePw(v))}
 });
 document.addEventListener('change',e=>{if(e.target&&e.target.id=='netTeam'){const p=prof();p.tm=+e.target.value;if(!(p.tm>=0&&p.tm<30))p.tm=-1;save();netPublish(true).catch(()=>{});toast('Favorite team saved')}});
-document.addEventListener('keydown',e=>{if(e.key!=='Enter'||!e.target)return;const id=e.target.id;if(id=='netMsg'){e.preventDefault();ACT.netsend(NET.chatWith)}else if(id=='netPw'||id=='netName'||id=='netEmail'){e.preventDefault();ACT.netauth(NET.gm=='up'?'up':'in')}else if(id=='netFgEmail'){e.preventDefault();ACT.netforgot()}else if(id=='netAddEm'){e.preventDefault();ACT.netaddem()}else if(id=='netFriend'){e.preventDefault();ACT.netfind()}});
+document.addEventListener('keydown',e=>{if(e.key!=='Enter'||!e.target)return;const id=e.target.id;if(id=='ivName'){e.preventDefault();ACT.ivclaim()}else if(id=='netMsg'){e.preventDefault();ACT.netsend(NET.chatWith)}else if(id=='netPw'||id=='netName'||id=='netEmail'){e.preventDefault();ACT.netauth(NET.gm=='up'?'up':'in')}else if(id=='netFgEmail'){e.preventDefault();ACT.netforgot()}else if(id=='netAddEm'){e.preventDefault();ACT.netaddem()}else if(id=='netFriend'){e.preventDefault();ACT.netfind()}});
 function netFilter(e){const q=e.value.trim().toLowerCase(),box=document.querySelector('[data-nl="'+e.dataset.nf+'"]');if(box)box.querySelectorAll('[data-nk]').forEach(c=>{c.style.display=!q||c.dataset.nk.includes(q)?'':'none'})}
-document.addEventListener('input',e=>{if(e.target&&e.target.dataset&&e.target.dataset.nf)netFilter(e.target)});
+document.addEventListener('input',e=>{if(e.target&&e.target.dataset&&e.target.dataset.nf)netFilter(e.target);if(e.target&&e.target.id=='ivName'){const p=$('#ivPrevN');if(p)p.textContent=e.target.value.trim().toLowerCase()||'your_name'}});
 VIEWS.online=onlineView;VIEWS.me=meView;
 netLoadLocal();admSync();
 if(NET.au&&NET.cfg)netAfterLogin().then(ch=>{if(ch){render();if(NET.msg2){toast(NET.msg2);NET.msg2=''}}else netRefresh()},()=>{});
